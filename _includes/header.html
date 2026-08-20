@@ -1,7 +1,10 @@
+{%- assign logo_file = site.static_files | where: "path", site.logo | first -%}
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="site-brand" href="{{ '/' | relative_url }}">
+      {%- if logo_file %}
       <img class="site-brand__logo" src="{{ site.logo | relative_url }}" alt="" width="48" height="48" loading="lazy">
+      {%- endif %}
       <span class="site-brand__text">
         <span class="site-brand__title">{{ site.title }}</span>
         <span class="site-brand__tagline">{{ site.tagline }}</span>

@@ -20,6 +20,7 @@ check "index.html"                 "home"
 check "page/2/index.html"          "paginazione"
 check "404.html"                   "pagina di errore"
 check "archivio/index.html"        "archivio"
+check "assets/img/head.png"        "banner della hero-box"
 
 echo "== Pagine statiche ereditate da WordPress =="
 check "chi-siamo/index.html"       "/chi-siamo/"

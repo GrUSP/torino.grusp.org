@@ -2,7 +2,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- assign favicon_file = site.static_files | where: "path", site.logo | first -%}
+  {%- if favicon_file %}
   <link rel="icon" href="{{ site.logo | relative_url }}" type="image/png">
+  {%- endif %}
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
   {%- seo -%}
 </head>
