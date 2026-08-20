@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<div class="wrap">
+  <article class="post h-entry">
+    <header class="post__header">
+      <h1 class="post__title p-name">{{ page.title | escape }}</h1>
+      {%- include post-meta.html post=page -%}
+    </header>
+
+    <div class="post__content e-content">
+      {{ content }}
+    </div>
+
+    {%- if page.tags and page.tags != empty -%}
+    <p class="post__tags">
+      {%- for tag in page.tags -%}
+      <a class="tag" href="{{ '/tag/' | append: tag | append: '/' | relative_url }}">#{{ tag }}</a>
+      {%- endfor -%}
+    </p>
+    {%- endif -%}
+
+    {%- if page.original_url -%}
+    <p class="post__source">Pubblicato originariamente su <a href="{{ page.original_url }}">{{ page.original_url }}</a>.</p>
+    {%- endif -%}
+
+    <nav class="post-nav" aria-label="Altri articoli">
+      {%- if page.previous %}<a class="post-nav__prev" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | escape }}</a>{% endif -%}
+      {%- if page.next %}<a class="post-nav__next" href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }} &rarr;</a>{% endif -%}
+    </nav>
+  </article>
+</div>

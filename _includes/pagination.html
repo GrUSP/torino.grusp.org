@@ -1,0 +1,11 @@
+{%- if paginator.total_pages > 1 -%}
+<nav class="pagination" aria-label="Paginazione archivio">
+  {%- if paginator.previous_page %}
+  <a class="pagination__prev" href="{{ paginator.previous_page_path | relative_url }}">&larr; Pi&ugrave; recenti</a>
+  {%- endif %}
+  <span class="pagination__status">Pagina {{ paginator.page }} di {{ paginator.total_pages }}</span>
+  {%- if paginator.next_page %}
+  <a class="pagination__next" href="{{ paginator.next_page_path | relative_url }}">Pi&ugrave; vecchi &rarr;</a>
+  {%- endif %}
+</nav>
+{%- endif -%}

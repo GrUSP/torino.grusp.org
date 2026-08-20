@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p class="site-footer__about">
+      <strong>{{ site.title }}</strong><br>
+      {{ site.description | strip_newlines | truncate: 180 }}
+    </p>
+    <ul class="site-footer__links">
+      <li><a href="{{ site.social.meetup }}">Meetup</a></li>
+      <li><a href="{{ site.social.grusp }}">GrUSP</a></li>
+      <li><a href="{{ '/feed.xml' | relative_url }}">Feed RSS</a></li>
+      <li><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></li>
+    </ul>
+    <p class="site-footer__legal">
+      &copy; {{ site.time | date: '%Y' }} {{ site.title }} &middot;
+      Sito statico generato con <a href="https://jekyllrb.com/">Jekyll</a> e ospitato su GitHub Pages.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,87 @@
+# --- Identità del sito -------------------------------------------------------
+title: "Programmer User Group Torino"
+tagline: "Gli appassionati di programmazione a Torino e dintorni"
+description: >-
+  Il blog del Programmer User Group Torino (PUG Torino): incontri, sessioni,
+  conferenze e comunicazioni della comunità di sviluppatrici e sviluppatori
+  di Torino e dintorni, parte di GrUSP.
+url: "https://torino.grusp.org"
+baseurl: ""
+lang: it
+timezone: Europe/Rome
+
+# Immagini di brand: vedi assets/img/README.md per i file da caricare.
+logo: /assets/img/logo_pugtorino.png
+banner: /assets/img/head.png
+
+author:
+  name: "Programmer User Group Torino"
+  email: "pugtorino@gmail.com"
+
+social:
+  meetup: "https://www.meetup.com/pugto-php-user-group-torino/"
+  grusp: "https://www.grusp.org/"
+
+# --- Permalink e paginazione -------------------------------------------------
+# Su WordPress i post usavano /%postname%/ : manteniamo la stessa struttura
+# per non rompere link esterni e indicizzazione.
+permalink: /:title/
+
+paginate: 10
+paginate_path: "/page/:num/"
+
+# --- Feed --------------------------------------------------------------------
+feed:
+  path: feed.xml
+
+# --- Archivi (categorie e tag), stesse URL di WordPress ----------------------
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive
+    tag: archive
+  permalinks:
+    category: /category/:name/
+    tag: /tag/:name/
+
+# --- Default di front matter -------------------------------------------------
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "pagine"
+    values:
+      layout: page
+
+# --- Markdown ----------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-redirect-from
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor
+  - tools
+  - _import
+  - .github

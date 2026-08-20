@@ -1,0 +1,12 @@
+<p class="meta">
+  <time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date: '%-d %B %Y' }}</time>
+  {%- if include.post.author %} &middot; <span class="meta__author">{{ include.post.author }}</span>{% endif -%}
+  {%- if include.post.categories and include.post.categories != empty %}
+  &middot;
+  <span class="meta__terms">
+    {%- for cat in include.post.categories -%}
+    <a href="{{ '/category/' | append: cat | append: '/' | relative_url }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
+    {%- endfor -%}
+  </span>
+  {%- endif -%}
+</p>

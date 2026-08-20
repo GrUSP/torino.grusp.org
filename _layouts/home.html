@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="wrap">
+  {%- if paginator.page == 1 or paginator.page == nil -%}
+  <section class="hero">
+    <img class="hero__banner" src="{{ site.banner | relative_url }}" alt="{{ site.title }}">
+    <h1 class="sr-only">{{ site.title }}</h1>
+    <p class="hero__tagline">{{ site.tagline }}</p>
+    <div class="hero__body">{{ content }}</div>
+  </section>
+  {%- else -%}
+  <h1 class="page__title">Articoli &mdash; pagina {{ paginator.page }}</h1>
+  {%- endif -%}
+
+  <section class="post-list" aria-label="Ultimi articoli">
+    {%- for post in paginator.posts -%}
+      {%- include post-card.html post=post -%}
+    {%- else -%}
+      <p class="empty">Nessun articolo pubblicato: importa i contenuti dal blog WordPress con <code>tools/import_wordpress.py</code>.</p>
+    {%- endfor -%}
+  </section>
+
+  {%- include pagination.html -%}
+</div>

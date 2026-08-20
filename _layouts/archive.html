@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div class="wrap">
+  <header class="archive__header">
+    <h1 class="archive__title">
+      {%- if page.type == 'category' -%}Categoria: {{ page.title }}
+      {%- elsif page.type == 'tag' -%}Tag: {{ page.title }}
+      {%- else -%}{{ page.title }}{%- endif -%}
+    </h1>
+    <p class="archive__count">{{ page.posts | size }} articol{% if page.posts.size == 1 %}o{% else %}i{% endif %}</p>
+  </header>
+
+  <section class="post-list">
+    {%- for post in page.posts -%}
+      {%- include post-card.html post=post -%}
+    {%- endfor -%}
+  </section>
+</div>
