@@ -4,13 +4,12 @@ permalink: /contatti/
 original_url: "https://torino.grusp.org/contatti/"
 ---
 
-<!--
-  Su WordPress questa pagina conteneva un form di contatto Jetpack
-  (`[contact-form]`), che richiede PHP e non può funzionare su un sito
-  statico: è stato sostituito dai recapiti diretti, con lo stesso indirizzo
-  a cui il form inoltrava i messaggi.
-  Ri-eseguendo l'import usa `--skip-existing` per non sovrascrivere questa pagina.
--->
+{% comment %}
+Su WordPress questa pagina conteneva il form di contatto di Jetpack, che
+richiede PHP e non può funzionare su un sito statico: è stato sostituito dai
+recapiti diretti, con lo stesso indirizzo a cui il form inoltrava i messaggi.
+Ri-eseguendo l'import usa --skip-existing per non sovrascrivere questa pagina.
+{% endcomment %}
 
 Vuoi partecipare agli incontri del PUG Torino, proporre un talk o organizzare
 una serata insieme a noi? Scrivici:
