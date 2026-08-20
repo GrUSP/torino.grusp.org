@@ -37,10 +37,35 @@ def visible_text(markup: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(TAG_RE.sub(" ", body))).strip()
 
 
-def resolve(link: str, site: Path) -> Path | None:
-    """Percorso atteso nel sito generato per un link interno, o None se esterno."""
-    if link.startswith(("http://", "https://", "//", "mailto:", "tel:", "data:", "javascript:")):
+def site_host(site: Path) -> str:
+    """Dominio del sito: dal CNAME se c'è, altrimenti da url in _config.yml."""
+    cname = site / "CNAME"
+    if cname.exists():
+        return cname.read_text(encoding="utf-8").strip()
+    config = Path("_config.yml")
+    if config.exists():
+        found = re.search(r'^url:\s*"(.*)"', config.read_text(encoding="utf-8"), re.M)
+        if found:
+            return urllib.parse.urlparse(found.group(1)).netloc
+    return ""
+
+
+def resolve(link: str, site: Path, host: str) -> Path | None:
+    """Percorso atteso nel sito generato, o None se il link è davvero esterno.
+
+    Gli URL assoluti verso il dominio del sito sono link interni a tutti gli
+    effetti: gli articoli importati da WordPress ne sono pieni (immagini e
+    slide su /wp-content/uploads/), e dopo il cambio DNS li serve GitHub Pages.
+    """
+    if link.startswith(("mailto:", "tel:", "data:", "javascript:")):
         return None
+    if link.startswith("//"):
+        link = "https:" + link
+    if link.startswith(("http://", "https://")):
+        parsed = urllib.parse.urlparse(link)
+        if not host or parsed.netloc != host:
+            return None
+        link = parsed.path or "/"
     path = urllib.parse.unquote(link.split("?", 1)[0].split("#", 1)[0])
     if not path.startswith("/"):
         return None  # link relativo: raro nel tema, non lo valutiamo
@@ -54,9 +79,11 @@ def main(argv: list[str]) -> int:
         print(f"Cartella non trovata: {site}")
         return 1
 
+    host = site_host(site)
     pages = sorted(site.rglob("*.html"))
     empty, liquid, missing_parts = [], [], []
     broken: list[tuple[str, str]] = []
+    missing_media: list[tuple[str, str]] = []
     img_hosts: Counter[str] = Counter()
     local_imgs = 0
     redirects = 0
@@ -86,21 +113,38 @@ def main(argv: list[str]) -> int:
             if parts:
                 missing_parts.append((rel, ",".join(parts)))
 
-        for link in HREF_RE.findall(markup):
-            target = resolve(link, site)
-            if target is not None and not target.exists():
+        for link in HREF_RE.findall(markup) + IMG_RE.findall(markup):
+            target = resolve(link, site, host)
+            if target is None:
+                netloc = urllib.parse.urlparse(link if not link.startswith("//") else "https:" + link).netloc
+                if netloc:
+                    img_hosts[netloc] += 1
+                continue
+            if target.exists():
+                if "/assets/" in link:
+                    local_imgs += 1
+                continue
+            if "/wp-content/uploads/" in link:
+                missing_media.append((rel, link))
+            else:
                 broken.append((rel, link))
 
-        for src in IMG_RE.findall(markup):
-            if src.startswith(("http://", "https://", "//")):
-                img_hosts[urllib.parse.urlparse(src if "//" != src[:2] else "https:" + src).netloc] += 1
-            else:
-                local_imgs += 1
-
     print(f"Pagine HTML analizzate: {len(pages)} (di cui {redirects} pagine di redirect)")
-    print(f"Immagini locali: {local_imgs}")
-    for host, count in img_hosts.most_common():
-        print(f"Immagini remote su {host}: {count}")
+    print(f"Dominio del sito: {host or '(non determinato)'}")
+    print(f"Riferimenti ad asset locali presenti: {local_imgs}")
+    for netloc, count in img_hosts.most_common(6):
+        print(f"Riferimenti esterni a {netloc}: {count}")
+
+    if missing_media:
+        unique = sorted({link for _, link in missing_media})
+        print(f"\nATTENZIONE — {len(unique)} media di WordPress non presenti nel sito "
+              f"({len(missing_media)} riferimenti in totale).")
+        print("Sono immagini e slide che stavano su wp-content/uploads: dopo il cambio")
+        print("DNS quelle URL le serve GitHub Pages, che non le ha. Vedi MIGRAZIONE.md.")
+        for link in unique[:8]:
+            print(f"  {link}")
+        if len(unique) > 8:
+            print(f"  ... e altri {len(unique) - 8}")
 
     if liquid:
         print(f"\nERRORE — Liquid non processato in {len(liquid)} pagine:")
