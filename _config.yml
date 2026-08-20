@@ -10,7 +10,7 @@ description: >-
 # feed, sitemap e canonical puntano al vecchio WordPress.
 # AL CAMBIO DNS: url: "https://torino.grusp.org" e baseurl: ""
 url: "https://grusp.github.io"
-baseurl: "/torino.grusp.org"
+baseurl: "/"
 lang: it
 timezone: Europe/Rome
 
