@@ -84,7 +84,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - MIGRAZIONE.md
   - LICENSE
+  - assets/img/README.md
   - vendor
   - tools
   - _import
