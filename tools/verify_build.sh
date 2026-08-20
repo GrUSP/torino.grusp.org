@@ -24,7 +24,7 @@ check "archivio/index.html"        "archivio"
 echo "== Pagine statiche ereditate da WordPress =="
 check "chi-siamo/index.html"       "/chi-siamo/"
 check "contatti/index.html"        "/contatti/"
-check "mailing-list/index.html"    "/mailing-list/"
+check "mailing-list/index.html"    "redirect da /mailing-list/ (pagina dismessa)"
 
 echo "== Articoli e archivi =="
 check "e-nato-il-pug-torino/index.html"                    "primo articolo (2011)"
@@ -39,6 +39,13 @@ check "feed/index.html"            "redirect dal vecchio /feed/"
 check "sitemap.xml"                "sitemap"
 check "robots.txt"                 "robots"
 check "2015/04/php-7-e-architetture-middleware/index.html" "vecchio permalink datato"
+
+if grep -q '/contatti/' "$SITE/mailing-list/index.html" 2>/dev/null; then
+  echo "  ok   /mailing-list/ redirige verso /contatti/"
+else
+  echo "  FAIL /mailing-list/ non redirige verso /contatti/"
+  fail=1
+fi
 
 echo "== Conteggi =="
 posts=$(find "$SITE" -name index.html -path "*/*" | wc -l)

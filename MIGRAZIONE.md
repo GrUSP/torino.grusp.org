@@ -36,8 +36,13 @@ Prima del cambio DNS, da una macchina con accesso al sito:
 python3 tools/import_wordpress.py \
   --wxr _import/torino.wordpress.xml \
   --download-media \
-  --skip-existing            # non tocca le pagine modificate a mano (es. pagine/contatti.md)
+  --skip-existing \
+  --skip-slug mailing-list
 ```
+
+`--skip-existing` non tocca le pagine modificate a mano (es. `pagine/contatti.md`);
+`--skip-slug mailing-list` evita di ricreare la pagina della mailing list, che è
+stata dismessa e la cui URL ora redirige su `/contatti/`.
 
 Lo script scarica i file in `assets/uploads/` (stessa struttura `AAAA/MM/`) e
 riscrive i link nei post. Poi commit e push.
@@ -69,9 +74,7 @@ Vedi `assets/img/README.md`: servono `head.png` (banner della hero-box) e
 - [ ] Un vecchio permalink datato, es. `/2015/04/php-7-e-architetture-middleware/`
 - [ ] Feed su `/feed.xml` e redirect da `/feed/`
 - [ ] Immagini degli articoli servite da `assets/uploads/`
-- [ ] Form della mailing list (`pagine/mailing-list.md`): punta a
-      `https://ml.grusp.org/subscribe.cgi/torino-grusp.org`; era in HTTP sul
-      sito originale, verifica che l'endpoint risponda anche in HTTPS
+- [ ] Redirect da `/mailing-list/` a `/contatti/` (la mailing list e' stata dismessa)
 - [ ] `sitemap.xml` e `robots.txt` (generati da `jekyll-sitemap`)
 
 ## Script disponibili

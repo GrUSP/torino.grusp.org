@@ -491,6 +491,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--media-url-prefix", default="/assets/uploads",
                         help="Prefisso URL dei media nel sito (default: /assets/uploads)")
     parser.add_argument("--include-drafts", action="store_true", help="Importa anche le bozze")
+    parser.add_argument("--skip-slug", action="append", default=[], metavar="SLUG",
+                        help="Non importa il contenuto con questo slug. Ripetibile. "
+                             "Usa --skip-slug mailing-list: quella pagina e' stata "
+                             "dismessa e la sua URL redirige su /contatti/.")
     parser.add_argument("--skip-existing", action="store_true",
                         help="Non sovrascrive i file già presenti")
     parser.add_argument("--no-redirects", dest="redirects", action="store_false",
@@ -520,6 +524,11 @@ def main(argv=None) -> int:
     for entry in entries:
         unique[(entry.kind, entry.slug)] = entry
     entries = sorted(unique.values(), key=lambda e: e.date or datetime.min.replace(tzinfo=TZ))
+
+    if args.skip_slug:
+        skipped = {s.strip("/") for s in args.skip_slug}
+        entries = [e for e in entries if e.slug not in skipped]
+        log(f"Esclusi per --skip-slug: {', '.join(sorted(skipped))}")
 
     if args.limit:
         entries = entries[-args.limit:]

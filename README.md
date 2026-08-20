@@ -11,7 +11,7 @@ _config.yml            configurazione del sito (titolo, permalink, plugin)
 _layouts/              default, home, post, page, archive
 _includes/             head, header, footer, card articolo, meta, paginazione
 _posts/                26 articoli importati da WordPress (AAAA-MM-GG-slug.md)
-pagine/                pagine statiche (chi siamo, contatti, mailing list)
+pagine/                pagine statiche (chi siamo, contatti, archivio)
 assets/css/style.scss  tema, con i design token in cima al file
 assets/img/            logo e banner — vedi assets/img/README.md
 tools/                 script di export dal sito WordPress e di import in Jekyll
@@ -40,7 +40,8 @@ Le pull request eseguono solo la build, senza deploy.
 | `/page/2/` | identico (`jekyll-paginate`) |
 | `/category/conferenze/` | identico (`jekyll-archives`) |
 | `/tag/php/` | identico (`jekyll-archives`) |
-| `/chi-siamo/`, `/contatti/`, `/mailing-list/` | identici |
+| `/chi-siamo/`, `/contatti/` | identici |
+| `/mailing-list/` | redirect a `/contatti/` (mailing list dismessa) |
 | `/AAAA/MM/nome-articolo/` (vecchi permalink) | redirect (`jekyll-redirect-from`) |
 | `/feed/` | redirect verso `/feed.xml` (Atom, `jekyll-feed`) |
 
