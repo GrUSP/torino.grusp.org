@@ -61,6 +61,9 @@ jobs:
       - name: Verifica delle URL migrate da WordPress
         run: bash tools/verify_build.sh
 
+      - name: Verifica del rendering di tutte le pagine
+        run: python3 tools/check_render.py _site
+
       - name: Upload artifact
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
