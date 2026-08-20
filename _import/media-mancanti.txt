@@ -1,0 +1,74 @@
+# Media di WordPress ancora da recuperare
+
+30 file (37 riferimenti negli articoli) che stavano su
+https://torino.grusp.org/wp-content/uploads/ e che il DNS non serve più:
+vanno recuperati dal backup degli upload del vecchio hosting e copiati in
+assets/uploads/ mantenendo la struttura AAAA/MM/.
+
+Poi, per riscrivere i link negli articoli:
+
+    python3 tools/import_wordpress.py --wxr _import/torino.wordpress.xml \
+        --rewrite-media --skip-slug mailing-list
+
+Elenco (percorso locale atteso <- URL originale):
+
+assets/uploads/2011/06/pug_torino.jpg <- https://torino.grusp.org/wp-content/uploads/2011/06/pug_torino.jpg
+    usato in: _posts/2011-06-10-e-nato-il-pug-torino.md
+assets/uploads/2011/07/php.to_.start_-300x300.jpg <- https://torino.grusp.org/wp-content/uploads/2011/07/php.to_.start_-300x300.jpg
+    usato in: _posts/2011-07-15-il-pug-torino-al-php-to-start.md
+assets/uploads/2011/09/seguici_su_facebook.jpg <- https://torino.grusp.org/wp-content/uploads/2011/09/seguici_su_facebook.jpg
+    usato in: _posts/2011-09-12-il-pug-torino-su-facebook.md
+assets/uploads/2012/01/locandina.jpg <- https://torino.grusp.org/wp-content/uploads/2012/01/locandina.jpg
+    usato in: _posts/2012-01-09-incontro-su-zend-framework.md
+assets/uploads/2012/01/locandina.pdf <- https://torino.grusp.org/wp-content/uploads/2012/01/locandina.pdf
+    usato in: _posts/2012-01-09-incontro-su-zend-framework.md
+assets/uploads/2012/03/logo_phptostart.gif <- https://torino.grusp.org/wp-content/uploads/2012/03/logo_phptostart.gif
+    usato in: _posts/2012-03-13-php-to-start-2012.md
+assets/uploads/2012/06/wordpress.png <- https://torino.grusp.org/wp-content/uploads/2012/06/wordpress.png
+    usato in: _posts/2012-06-12-wordpress-conference-2012.md
+assets/uploads/2012/08/symfony.jpg <- https://torino.grusp.org/wp-content/uploads/2012/08/symfony.jpg
+    usato in: _posts/2012-08-17-symfony-day.md
+assets/uploads/2012/09/mongodb.jpg <- https://torino.grusp.org/wp-content/uploads/2012/09/mongodb.jpg
+    usato in: _posts/2012-09-20-mongodb-and-php.md
+assets/uploads/2012/12/zfday.png <- https://torino.grusp.org/wp-content/uploads/2012/12/zfday.png
+    usato in: _posts/2012-12-06-zend-framework-day.md
+assets/uploads/2013/03/banner_phptostart.png <- https://torino.grusp.org/wp-content/uploads/2013/03/banner_phptostart.png
+    usato in: _posts/2013-03-22-php-to-start-2013.md
+assets/uploads/2014/01/zfday20142.png <- https://torino.grusp.org/wp-content/uploads/2014/01/zfday20142.png
+    usato in: _posts/2014-01-24-lo-zfday-2014-sbarca-a-torino.md
+assets/uploads/2014/02/Schermata-2014-02-27-alle-10.09.41.png <- https://torino.grusp.org/wp-content/uploads/2014/02/Schermata-2014-02-27-alle-10.09.41.png
+    usato in: _posts/2014-02-27-incontro-febbraio-2014-hhvm-phalcon-e-pthread.md
+assets/uploads/2014/02/Schermata-2014-02-27-alle-10.09.54.png <- https://torino.grusp.org/wp-content/uploads/2014/02/Schermata-2014-02-27-alle-10.09.54.png
+    usato in: _posts/2014-02-27-incontro-febbraio-2014-hhvm-phalcon-e-pthread.md
+assets/uploads/2014/02/Schermata-2014-02-27-alle-10.41.53.png <- https://torino.grusp.org/wp-content/uploads/2014/02/Schermata-2014-02-27-alle-10.41.53.png
+    usato in: _posts/2014-02-27-incontro-febbraio-2014-hhvm-phalcon-e-pthread.md
+assets/uploads/2017/04/torinohacknight.png <- https://torino.grusp.org/wp-content/uploads/2017/04/torinohacknight.png
+    usato in: _posts/2017-04-18-hacknight-su-zend-framework.md
+assets/uploads/2017/11/librophp7.jpg <- https://torino.grusp.org/wp-content/uploads/2017/11/librophp7.jpg
+    usato in: _posts/2017-11-20-incontro-su-blockchain-e-presentazione-libro-sviluppare-in-php-7.md
+assets/uploads/2018/02/docker_kubernetes.png <- https://torino.grusp.org/wp-content/uploads/2018/02/docker_kubernetes.png
+    usato in: _posts/2018-02-26-docker-e-kubernetes.md
+assets/uploads/2018/05/swoole_evento.png <- https://torino.grusp.org/wp-content/uploads/2018/05/swoole_evento.png
+    usato in: _posts/2018-05-23-programmazione-asincrona-in-php.md
+assets/uploads/2020/01/meetup_php74-1024x768.jpg <- https://torino.grusp.org/wp-content/uploads/2020/01/meetup_php74-1024x768.jpg
+    usato in: _posts/2020-01-09-le-novita-del-php-7-4.md
+assets/uploads/2024/06/daniele_meetup.jpg <- https://torino.grusp.org/wp-content/uploads/2024/06/daniele_meetup.jpg
+    usato in: _posts/2024-06-24-automatizzare-e-ottimizzare-una-pipeline-ci-cd.md
+assets/uploads/2025/04/Volcanic-Minds-Strumenti-IA-per-Sviluppatori-Talk.pdf <- https://torino.grusp.org/wp-content/uploads/2025/04/Volcanic-Minds-Strumenti-IA-per-Sviluppatori-Talk.pdf
+    usato in: _posts/2025-04-18-strumenti-di-intelligenza-artificiale-per-sviluppatori.md
+assets/uploads/2025/04/foto_pug_torino_17_aprile_2025-1024x766.jpg <- https://torino.grusp.org/wp-content/uploads/2025/04/foto_pug_torino_17_aprile_2025-1024x766.jpg
+    usato in: _posts/2025-04-18-strumenti-di-intelligenza-artificiale-per-sviluppatori.md
+assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg <- https://torino.grusp.org/wp-content/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg
+    usato in: _posts/2025-04-18-strumenti-di-intelligenza-artificiale-per-sviluppatori.md
+assets/uploads/2025/05/Nodejs_-rotta-verso-le-massime-prestazioni.pdf <- https://torino.grusp.org/wp-content/uploads/2025/05/Nodejs_-rotta-verso-le-massime-prestazioni.pdf
+    usato in: _posts/2025-05-29-node-js-rotta-verso-le-massime-prestazioni.md
+assets/uploads/2025/05/incontro_nodejs_28_maggio_2-1024x768.jpeg <- https://torino.grusp.org/wp-content/uploads/2025/05/incontro_nodejs_28_maggio_2-1024x768.jpeg
+    usato in: _posts/2025-05-29-node-js-rotta-verso-le-massime-prestazioni.md
+assets/uploads/2025/05/incontro_nodejs_28_maggio_2.jpeg <- https://torino.grusp.org/wp-content/uploads/2025/05/incontro_nodejs_28_maggio_2.jpeg
+    usato in: _posts/2025-05-29-node-js-rotta-verso-le-massime-prestazioni.md
+assets/uploads/2025/12/Meetup_PHP85.pdf <- https://torino.grusp.org/wp-content/uploads/2025/12/Meetup_PHP85.pdf
+    usato in: _posts/2025-12-19-auguri-di-natale-con-php-8-5.md
+assets/uploads/2025/12/meetup_18_12_2025.jpg <- https://torino.grusp.org/wp-content/uploads/2025/12/meetup_18_12_2025.jpg
+    usato in: _posts/2025-12-19-auguri-di-natale-con-php-8-5.md
+assets/uploads/2025/12/meetup_18_12_2025_2.jpg <- https://torino.grusp.org/wp-content/uploads/2025/12/meetup_18_12_2025_2.jpg
+    usato in: _posts/2025-12-19-auguri-di-natale-con-php-8-5.md

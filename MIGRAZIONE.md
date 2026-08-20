@@ -25,12 +25,26 @@ oppure con il primo push su `main`). L'anteprima sarà su
 > L'API Pages non è raggiungibile dall'ambiente in cui è stata preparata la
 > migrazione, quindi questo passaggio va fatto dall'interfaccia web.
 
-## 2. Portare i media dentro al repository
+## 2. Portare i media dentro al repository (in sospeso)
 
-Gli articoli referenziano ancora le immagini su
-`https://torino.grusp.org/wp-content/uploads/...`: finché WordPress è online
-funzionano, ma **smettono di funzionare quando il DNS punta a GitHub Pages**.
-Prima del cambio DNS, da una macchina con accesso al sito:
+Gli articoli referenziano ancora immagini e slide su
+`https://torino.grusp.org/wp-content/uploads/...`. Il DNS è già stato girato,
+quindi quelle URL le serve GitHub Pages, che non le ha: **30 file (37
+riferimenti) risultano mancanti**. L'elenco completo, con il percorso locale
+atteso e gli articoli che li usano, è in `_import/media-mancanti.txt`.
+
+Non essendo più raggiungibile il vecchio sito, vanno recuperati dal backup
+della cartella `wp-content/uploads` del vecchio hosting e copiati in
+`assets/uploads/` mantenendo la struttura `AAAA/MM/`. Poi si riscrivono i link
+negli articoli:
+
+```bash
+python3 tools/import_wordpress.py --wxr _import/torino.wordpress.xml \
+  --rewrite-media --skip-slug mailing-list
+```
+
+Se invece il vecchio sito fosse ancora raggiungibile da qualche parte (per IP o
+con un hostname temporaneo), lo scaricamento automatico è ancora possibile:
 
 ```bash
 python3 tools/import_wordpress.py \
