@@ -32,6 +32,10 @@ jobs:
         id: pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
+        with:
+          # Attiva GitHub Pages (source: GitHub Actions) al primo run, senza
+          # doverlo fare a mano da Settings -> Pages.
+          enablement: true
 
       - name: Build del sito
         env:
