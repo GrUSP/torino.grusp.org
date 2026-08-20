@@ -11,7 +11,7 @@
 | Attivazione di GitHub Pages nelle impostazioni del repo | **da fare a mano** (serve un permesso admin) |
 | Download dei media da `wp-content/uploads` | **da fare** (rete bloccata durante la migrazione) |
 | Logo e banner in `assets/img/` | **da caricare** (vedi `assets/img/README.md`) |
-| Cambio DNS di `torino.grusp.org` verso GitHub Pages | **da fare per ultimo** |
+| Cambio DNS di `torino.grusp.org` verso GitHub Pages | fatto |
 
 ## 1. Attivare GitHub Pages
 
@@ -58,26 +58,23 @@ Vedi `assets/img/README.md`: servono `head.png` (banner della hero-box) e
 
 ## 4. Cambio DNS e dominio personalizzato
 
-Finché il DNS non è girato il sito vive sull'anteprima di progetto
-<https://grusp.github.io/torino.grusp.org/>, e `_config.yml` la descrive:
+Il DNS è stato girato: il sito sta sulla radice di <https://torino.grusp.org>,
+con il dominio nel file `CNAME` e in `_config.yml`:
 
 ```yaml
-url: "https://grusp.github.io"
-baseurl: "/torino.grusp.org"
+url: "https://torino.grusp.org"
+baseurl: ""
 ```
 
 Il tema usa ovunque `relative_url`, quindi i link seguono il `baseurl`.
 
-Al cambio DNS, nell'ordine:
+> `baseurl: "/"` **non** è equivalente a `""`: produce link con doppia barra
+> (`//assets/css/style.css`), che il browser risolve come un altro host, e il
+> sito resta senza CSS. Lo smoke test in CI ora blocca questo caso.
 
-1. In `_config.yml`: `url: "https://torino.grusp.org"` e `baseurl: ""`
-   (senza questo passaggio il sito sul dominio finale cerca gli asset sotto
-   `/torino.grusp.org/`).
-2. Crea il file `CNAME` nella root del repository con dentro `torino.grusp.org`
-   (oppure imposta *Custom domain* in Settings → Pages: GitHub lo crea da solo).
-3. Sul DNS di `grusp.org` fai puntare `torino` a `grusp.github.io` (record CNAME).
-4. Attendi la verifica del dominio e spunta **Enforce HTTPS**.
-5. Spegni il WordPress solo dopo aver verificato che il sito statico risponda.
+Rimane da spuntare **Enforce HTTPS** in Settings → Pages, quando GitHub ha
+completato la verifica del dominio, e da spegnere WordPress una volta
+verificato che tutto risponda (vedi punto 2 sui media).
 
 ## Sorgente di GitHub Pages
 

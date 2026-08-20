@@ -28,10 +28,9 @@ bundle exec jekyll serve --livereload   # http://127.0.0.1:4000
 
 ## Dove è pubblicato
 
-Finché il DNS di `torino.grusp.org` non punta a GitHub Pages il sito sta su
-<https://grusp.github.io/torino.grusp.org/>, e `url`/`baseurl` in `_config.yml`
-descrivono quell'indirizzo. Le due righe da cambiare al cambio DNS sono
-documentate in [MIGRAZIONE.md](MIGRAZIONE.md).
+Su <https://torino.grusp.org> (dominio personalizzato nel file `CNAME`).
+`url` e `baseurl` in `_config.yml` devono descrivere quell'indirizzo:
+`baseurl` va lasciato vuoto, perché il sito sta sulla radice del dominio.
 
 ## Pubblicare
 

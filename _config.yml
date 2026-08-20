@@ -5,12 +5,12 @@ description: >-
   Il blog del Programmer User Group Torino (PUG Torino): incontri, sessioni,
   conferenze e comunicazioni della comunità di sviluppatrici e sviluppatori
   di Torino e dintorni, parte di GrUSP.
-# Finché il DNS di torino.grusp.org non punta a GitHub Pages, il sito vive
-# sull'anteprima di progetto: url + baseurl devono descriverla, altrimenti
-# feed, sitemap e canonical puntano al vecchio WordPress.
-# AL CAMBIO DNS: url: "https://torino.grusp.org" e baseurl: ""
-url: "https://grusp.github.io"
-baseurl: "/"
+# Il DNS punta a GitHub Pages e il dominio personalizzato è nel file CNAME:
+# il sito sta sulla radice del dominio, quindi baseurl deve essere vuoto.
+# Attenzione: baseurl: "/" NON è equivalente a "" — produce link con doppia
+# barra (//assets/...), che il browser interpreta come un altro host.
+url: "https://torino.grusp.org"
+baseurl: ""
 lang: it
 timezone: Europe/Rome
 

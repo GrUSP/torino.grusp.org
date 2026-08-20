@@ -48,8 +48,41 @@ else
   fail=1
 fi
 
-echo "== Asset referenziati correttamente =="
+echo "== Dominio, baseurl e asset =="
 BASEURL="${BASEURL:-$(sed -n 's/^baseurl: *"\(.*\)"/\1/p' _config.yml)}"
+SITE_URL="$(sed -n 's/^url: *"\(.*\)"/\1/p' _config.yml)"
+
+# baseurl: "/" non e' equivalente a "": genera //assets/... , che il browser
+# risolve come host esterno. Deve essere vuoto o iniziare (e non finire) con /.
+case "$BASEURL" in
+  "")  echo "  ok   baseurl vuoto: il sito sta sulla radice del dominio" ;;
+  */)  echo "  FAIL baseurl \"$BASEURL\" termina con '/': genera link con doppia barra"; fail=1 ;;
+  /*)  echo "  ok   baseurl \"$BASEURL\"" ;;
+  *)   echo "  FAIL baseurl \"$BASEURL\" non inizia con '/'"; fail=1 ;;
+esac
+
+# Link protocol-relative: sintomo classico di un baseurl sbagliato.
+if grep -qE '(href|src)="//' "$SITE/index.html"; then
+  echo "  FAIL la home contiene link protocol-relative (//...), quasi sempre un baseurl errato"
+  grep -oE '(href|src)="//[^"]*"' "$SITE/index.html" | sort -u | head
+  fail=1
+else
+  echo "  ok   nessun link protocol-relative nella home"
+fi
+
+# Dominio personalizzato: il CNAME deve finire nel sito e combaciare con url.
+if [ -f "$SITE/CNAME" ]; then
+  cname="$(tr -d ' \n\r' < "$SITE/CNAME")"
+  host="${SITE_URL#https://}"; host="${host#http://}"; host="${host%%/*}"
+  if [ "$cname" = "$host" ]; then
+    echo "  ok   CNAME ($cname) coerente con url in _config.yml"
+  else
+    echo "  FAIL CNAME ($cname) diverso dall'host di url ($host): canonical, feed e sitemap punterebbero altrove"
+    fail=1
+  fi
+else
+  echo "  ok   nessun CNAME (sito senza dominio personalizzato)"
+fi
 expected_css="${BASEURL}/assets/css/style.css"
 if grep -q "href=\"$expected_css\"" "$SITE/index.html"; then
   echo "  ok   la home linka il CSS su $expected_css"
@@ -59,6 +92,11 @@ else
   fail=1
 fi
 check "assets/css/style.css"       "foglio di stile generato"
+
+echo "== Campione di HTML generato =="
+grep -oE '<link rel="stylesheet"[^>]*>' "$SITE/index.html" | head -1 | sed 's/^/  /'
+grep -oE '<link rel="canonical"[^>]*>' "$SITE/index.html" | head -1 | sed 's/^/  /'
+grep -oE '<link rel="alternate"[^>]*>' "$SITE/index.html" | head -1 | sed 's/^/  /'
 
 echo "== Conteggi =="
 posts=$(find "$SITE" -name index.html -path "*/*" | wc -l)
@@ -74,6 +112,15 @@ printf '  articoli attesi: %s, generati: %s (pagine HTML totali: %s)\n' \
 if [ "$generated_posts" -ne "$expected_posts" ]; then
   echo "  FAIL: alcuni articoli non sono stati generati"
   fail=1
+fi
+
+# I media non ancora importati restano su wp-content: dopo il cambio DNS
+# quelle URL non esistono piu'. Segnalato, non bloccante.
+leftover=$(grep -rho 'https://[a-z.]*/wp-content/uploads/[^"'"'"' )]*' "$SITE" --include='*.html' | sort -u | wc -l)
+if [ "$leftover" -gt 0 ]; then
+  echo "  ATTENZIONE: $leftover media ancora referenziati su wp-content/uploads (vedi MIGRAZIONE.md punto 2)"
+else
+  echo "  ok   nessun media referenziato su wp-content"
 fi
 
 # Nessun residuo di shortcode WordPress nell'HTML pubblicato.
