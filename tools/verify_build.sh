@@ -48,6 +48,18 @@ else
   fail=1
 fi
 
+echo "== Asset referenziati correttamente =="
+BASEURL="${BASEURL:-$(sed -n 's/^baseurl: *"\(.*\)"/\1/p' _config.yml)}"
+expected_css="${BASEURL}/assets/css/style.css"
+if grep -q "href=\"$expected_css\"" "$SITE/index.html"; then
+  echo "  ok   la home linka il CSS su $expected_css"
+else
+  echo "  FAIL la home non linka il CSS su $expected_css"
+  grep -o 'href="[^"]*style.css"' "$SITE/index.html" || echo "  (nessun link al foglio di stile)"
+  fail=1
+fi
+check "assets/css/style.css"       "foglio di stile generato"
+
 echo "== Conteggi =="
 posts=$(find "$SITE" -name index.html -path "*/*" | wc -l)
 expected_posts=$(find _posts -name '*.md' | wc -l)

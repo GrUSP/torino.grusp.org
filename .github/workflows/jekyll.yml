@@ -28,6 +28,20 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      # Il builder classico di Pages (sorgente "Deploy from a branch") compila
+      # senza il baseurl del sito di anteprima: pubblicherebbe pagine con CSS e
+      # link rotti, in gara con questo workflow. Forziamo la sorgente.
+      - name: Sorgente Pages = GitHub Actions
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api -X PUT "repos/${{ github.repository }}/pages" -f build_type=workflow >/dev/null 2>&1; then
+            echo "Sorgente Pages impostata su GitHub Actions."
+          else
+            echo "::warning::Non sono riuscito a impostare la sorgente Pages. Impostala a mano da Settings -> Pages -> Source: GitHub Actions, altrimenti il builder classico continua a pubblicare il sito senza baseurl (CSS e link rotti)."
+          fi
+
       - name: Configure Pages
         id: pages
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -40,7 +54,9 @@ jobs:
       - name: Build del sito
         env:
           JEKYLL_ENV: production
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # Nessun --baseurl: lo definisce _config.yml, così la build in CI, quella
+        # nelle PR e quella in locale producono esattamente gli stessi link.
+        run: bundle exec jekyll build
 
       - name: Verifica delle URL migrate da WordPress
         run: bash tools/verify_build.sh

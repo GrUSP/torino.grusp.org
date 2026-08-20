@@ -5,8 +5,12 @@ description: >-
   Il blog del Programmer User Group Torino (PUG Torino): incontri, sessioni,
   conferenze e comunicazioni della comunità di sviluppatrici e sviluppatori
   di Torino e dintorni, parte di GrUSP.
-url: "https://torino.grusp.org"
-baseurl: ""
+# Finché il DNS di torino.grusp.org non punta a GitHub Pages, il sito vive
+# sull'anteprima di progetto: url + baseurl devono descriverla, altrimenti
+# feed, sitemap e canonical puntano al vecchio WordPress.
+# AL CAMBIO DNS: url: "https://torino.grusp.org" e baseurl: ""
+url: "https://grusp.github.io"
+baseurl: "/torino.grusp.org"
 lang: it
 timezone: Europe/Rome
 

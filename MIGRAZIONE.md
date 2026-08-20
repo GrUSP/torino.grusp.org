@@ -58,11 +58,35 @@ Vedi `assets/img/README.md`: servono `head.png` (banner della hero-box) e
 
 ## 4. Cambio DNS e dominio personalizzato
 
-1. Crea il file `CNAME` nella root del repository con dentro `torino.grusp.org`
+Finché il DNS non è girato il sito vive sull'anteprima di progetto
+<https://grusp.github.io/torino.grusp.org/>, e `_config.yml` la descrive:
+
+```yaml
+url: "https://grusp.github.io"
+baseurl: "/torino.grusp.org"
+```
+
+Il tema usa ovunque `relative_url`, quindi i link seguono il `baseurl`.
+
+Al cambio DNS, nell'ordine:
+
+1. In `_config.yml`: `url: "https://torino.grusp.org"` e `baseurl: ""`
+   (senza questo passaggio il sito sul dominio finale cerca gli asset sotto
+   `/torino.grusp.org/`).
+2. Crea il file `CNAME` nella root del repository con dentro `torino.grusp.org`
    (oppure imposta *Custom domain* in Settings → Pages: GitHub lo crea da solo).
-2. Sul DNS di `grusp.org` fai puntare `torino` a `grusp.github.io` (record CNAME).
-3. Attendi la verifica del dominio e spunta **Enforce HTTPS**.
-4. Spegni il WordPress solo dopo aver verificato che il sito statico risponda.
+3. Sul DNS di `grusp.org` fai puntare `torino` a `grusp.github.io` (record CNAME).
+4. Attendi la verifica del dominio e spunta **Enforce HTTPS**.
+5. Spegni il WordPress solo dopo aver verificato che il sito statico risponda.
+
+## Sorgente di GitHub Pages
+
+Pages deve stare su **Source: GitHub Actions**. Se viene impostata su *Deploy
+from a branch*, il builder classico compila il sito in parallelo a questo
+workflow ignorando `jekyll-archives` (niente pagine di categoria e tag): le due
+pubblicazioni si sovrascrivono a vicenda. Il workflow prova a riportare la
+sorgente su GitHub Actions a ogni run e, se non ci riesce, lo segnala come
+warning.
 
 > Non aggiungere `CNAME` prima del passo 2: GitHub Pages inizierebbe a
 > redirigere l'anteprima `github.io` verso un dominio ancora servito da WordPress.
