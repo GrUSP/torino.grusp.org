@@ -2,6 +2,7 @@
 title: "Incontro di gennaio 2014"
 date: 2014-02-04 16:29:53 +0100
 categories: ["sessioni"]
+tags: ["php", "testing", "sviluppo-software"]
 author: "Antonio Pessolano"
 original_url: "https://torino.grusp.org/incontro-di-gennaio-2014/"
 redirect_from: ["/2014/02/incontro-di-gennaio-2014/"]

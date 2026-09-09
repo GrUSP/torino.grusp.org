@@ -2,6 +2,7 @@
 title: "Docker e Kubernetes"
 date: 2018-02-26 08:22:35 +0100
 categories: ["comunicazioni"]
+tags: ["docker", "kubernetes", "devops"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/docker-e-kubernetes/"
 redirect_from: ["/2018/02/docker-e-kubernetes/"]

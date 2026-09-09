@@ -2,6 +2,7 @@
 title: "Incontro Febbraio 2014 - HHVM, Phalcon e Pthreads"
 date: 2014-02-27 11:53:59 +0100
 categories: ["sessioni"]
+tags: ["php", "performance"]
 author: "Fabio Giannese"
 original_url: "https://torino.grusp.org/incontro-febbraio-2014-hhvm-phalcon-e-pthread/"
 redirect_from: ["/2014/02/incontro-febbraio-2014-hhvm-phalcon-e-pthread/"]

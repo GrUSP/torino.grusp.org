@@ -2,6 +2,7 @@
 title: "HackNight su Zend Framework"
 date: 2017-04-18 09:02:00 +0200
 categories: ["sessioni"]
+tags: ["php", "zend-framework", "open-source"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/hacknight-su-zend-framework/"
 redirect_from: ["/2017/04/hacknight-su-zend-framework/"]

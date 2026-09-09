@@ -2,6 +2,7 @@
 title: "Incontro su BlockChain e presentazione libro Sviluppare in PHP 7"
 date: 2017-11-20 10:25:27 +0100
 categories: ["comunicazioni", "sessioni"]
+tags: ["php", "blockchain", "libri", "novita-php"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/incontro-su-blockchain-e-presentazione-libro-sviluppare-in-php-7/"
 redirect_from: ["/2017/11/incontro-su-blockchain-e-presentazione-libro-sviluppare-in-php-7/"]

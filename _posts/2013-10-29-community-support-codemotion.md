@@ -2,6 +2,7 @@
 title: "Il PUG Torino è community support del Codemotion"
 date: 2013-10-29 09:40:56 +0100
 categories: ["conferenze"]
+tags: ["php", "sviluppo-software"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/community-support-codemotion/"
 redirect_from: ["/2013/10/community-support-codemotion/"]

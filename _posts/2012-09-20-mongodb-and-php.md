@@ -2,6 +2,7 @@
 title: "MongoDB and PHP"
 date: 2012-09-20 08:30:56 +0200
 categories: ["recensioni"]
+tags: ["php", "mongodb", "libri"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/mongodb-and-php/"
 redirect_from: ["/2012/09/mongodb-and-php/"]
