@@ -2,19 +2,38 @@
 # Front matter vuoto: necessario perché Jekyll processi il file con Sass.
 ---
 
+@use "sass:color";
+@use "sass:math";
+
+@function round-color($c) {
+  @return rgb(
+    math.round(color.channel($c, "red", $space: rgb)),
+    math.round(color.channel($c, "green", $space: rgb)),
+    math.round(color.channel($c, "blue", $space: rgb))
+  );
+}
+
 /* ---------------------------------------------------------------------------
    Design tokens — cambia qui colori e tipografia per allinearti al brand GrUSP
    --------------------------------------------------------------------------- */
+
+$brand: #e8d658;
+$bg-light: #ffffff;
+$bg-dark: #14140f;
+
+$brand-muted: round-color(color.scale($brand, $saturation: -35%));
+
 :root {
-  --brand: #e8dd63;      /* giallo del banner storico del PUG Torino */
+  --brand: #{$brand};
   --brand-ink: #0d0d0d;  /* nero della Mole e del wordmark */
-  --bg: #ffffff;
-  --bg-soft: #faf8e8;
+  --bg: #{$bg-light};
+  --bg-soft: #{round-color(color.mix($brand, $bg-light, 15%))};
   --fg: #16160f;
   --fg-muted: #5d5c4c;
-  --accent: #7a6a00;
-  --accent-soft: #f3ecb4;
-  --border: #e4e0c4;
+
+  --accent: #{round-color(color.scale($brand, $lightness: -58%, $saturation: 60%))};
+  --accent-soft: #{round-color(color.mix($brand, $bg-light, 45%))};
+  --border: #{round-color(color.mix($brand-muted, $bg-light, 45%))};
   --maxw: 46rem;
   --font-body: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -22,13 +41,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #14140f;
-    --bg-soft: #1d1d14;
+    --bg: #{$bg-dark};
+    --bg-soft: #{round-color(color.mix($brand, $bg-dark, 6%))};
     --fg: #ecebdf;
     --fg-muted: #a5a390;
-    --accent: #e8dd63;
-    --accent-soft: #33301a;
-    --border: #33322a;
+
+    --accent: var(--brand);
+    --accent-soft: #{round-color(color.mix($brand, $bg-dark, 16%))};
+    --border: #{round-color(color.mix($brand-muted, $bg-dark, 16%))};
   }
 }
 
