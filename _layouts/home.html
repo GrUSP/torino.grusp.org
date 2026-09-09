@@ -13,9 +13,19 @@ layout: default
   <h1 class="page__title">Articoli &mdash; pagina {{ paginator.page }}</h1>
   {%- endif -%}
 
+    {%- if paginator.page == 1 or paginator.page == nil -%}
+    {%- assign evidenza = true -%}
+  {%- else -%}
+    {%- assign evidenza = false -%}
+  {%- endif -%}
+
   <section class="post-list" aria-label="Ultimi articoli">
     {%- for post in paginator.posts -%}
-      {%- include post-card.html post=post -%}
+      {%- if evidenza and forloop.first -%}
+        {%- include post-card.html post=post featured=true -%}
+      {%- else -%}
+        {%- include post-card.html post=post featured=false -%}
+      {%- endif -%}
     {%- else -%}
       <p class="empty">Nessun articolo pubblicato: importa i contenuti dal blog WordPress con <code>tools/import_wordpress.py</code>.</p>
     {%- endfor -%}
