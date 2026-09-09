@@ -1,9 +1,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="color-scheme" content="light dark">
+
+  <script>
+    (function () {
+      try {
+        var tema = localStorage.getItem('tema');
+        if (tema === 'light' || tema === 'dark') {
+          document.documentElement.setAttribute('data-theme', tema);
+        }
+      } catch (e) {
+
+      }
+    })();
+  </script>
     <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/space-grotesk-latin.woff2' | relative_url }}" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <script src="{{ '/assets/js/theme.js' | relative_url }}" defer></script>
   {%- assign favicon_file = site.static_files | where: "path", site.logo | first -%}
   {%- if favicon_file %}
   <link rel="icon" href="{{ site.logo | relative_url }}" type="image/png">
