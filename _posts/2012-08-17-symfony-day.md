@@ -2,6 +2,7 @@
 title: "Symfony Day"
 date: 2012-08-17 06:56:56 +0200
 categories: ["comunicazioni", "conferenze"]
+tags: ["php", "symfony", "open-source"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/symfony-day/"
 redirect_from: ["/2012/08/symfony-day/"]

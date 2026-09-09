@@ -2,6 +2,7 @@
 title: "Recensione libri su PHP e tecnologie web"
 date: 2012-09-20 08:35:07 +0200
 categories: ["comunicazioni"]
+tags: ["php", "libri"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/recensione-libri/"
 redirect_from: ["/2012/09/recensione-libri/"]

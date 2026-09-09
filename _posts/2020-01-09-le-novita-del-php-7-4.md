@@ -2,6 +2,7 @@
 title: "Le novità del PHP 7.4"
 date: 2020-01-09 12:45:32 +0100
 categories: ["sessioni"]
+tags: ["php", "novita-php"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/le-novita-del-php-7-4/"
 redirect_from: ["/2020/01/le-novita-del-php-7-4/"]
