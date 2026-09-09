@@ -12,7 +12,7 @@ E' ufficiale, oggi 10 Giugno 2011 è nato il PHP User Group di Torino! Siamo app
 
 Pubblichiamo la foto dei partecipanti, per il momento soltanto 7 ma il numero è destinato a crescere in futuro (ci sono molte persone interessate che non hanno potuto partecipare questa sera).
 
-![](https://torino.grusp.org/wp-content/uploads/2011/06/pug_torino.jpg)
+![](/assets/uploads/2011/06/pug_torino.jpg)
 
 Durante la cena sono emerse numerose proposte per attività, incontri e conferenze sul PHP da organizzare a Torino.
 

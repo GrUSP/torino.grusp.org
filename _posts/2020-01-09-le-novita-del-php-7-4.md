@@ -17,6 +17,6 @@ Il [PHP 7.4](<https://www.php.net/ChangeLog-7.php#7.4.0>) è stato rilasciato il
   * [Weak References](<https://www.php.net/manual/migration74.new-features.php#migration74.new-features.core.weakreference>)
   * [Opcache Preloading](<https://www.php.net/manual/opcache.configuration.php#ini.opcache.preload>)
 
-![](https://torino.grusp.org/wp-content/uploads/2020/01/meetup_php74-1024x768.jpg)
+![](/assets/uploads/2020/01/meetup_php74-1024x768.jpg)
 
 Nel meetup di Settembre 2019, Enrico Zimuel ha presentato queste novità al PHP User Group Torino. Le slide dell'evento sono riportate in questo link: <https://www.zimuel.it/slides/pugtorino/php74>

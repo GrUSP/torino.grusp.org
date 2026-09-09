@@ -7,7 +7,7 @@ original_url: "https://torino.grusp.org/hacknight-su-zend-framework/"
 redirect_from: ["/2017/04/hacknight-su-zend-framework/"]
 ---
 
-![](https://torino.grusp.org/wp-content/uploads/2017/04/torinohacknight.png)  
+![](/assets/uploads/2017/04/torinohacknight.png)  
 Giovedì 20 Aprile, dalle 18:30 alle 21:30, si terrà una hacknight su [Zend Framework](<https://framework.zend.com/>) al [ToolBox Office](<http://www.toolboxoffice.it/>) di Torino.
 
 Durante l'incontro [Enrico Zimuel](<http://www.zimuel.it>), core developer di Zend Framework, presenterà le varie modalità di collaborazione al progetto open source. Seguirà una sessione di hacking per cercare di risolvere qualche issue aperta sul progetto.

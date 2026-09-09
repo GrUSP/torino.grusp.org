@@ -11,7 +11,7 @@ redirect_from: ["/2017/11/incontro-su-blockchain-e-presentazione-libro-sviluppar
 
 Durante l'incontro ci sarà una presentazione di [Walter Dal Mut](<http://walterdalmut.com/>) sulle BlockChain e la presentazione con l'autore [Enrico Zimuel](<https://www.zimuel.it/>) del suo ultimo libro [_Sviluppare in PHP 7. Realizzare applicazioni web e API professionali_](<https://www.sviluppareinphp7.it/>) edito da Tecniche Nuove.
 
-[![](https://torino.grusp.org/wp-content/uploads/2017/11/librophp7.jpg)](<https://www.sviluppareinphp7.it/>)
+[![](/assets/uploads/2017/11/librophp7.jpg)](<https://www.sviluppareinphp7.it/>)
 
 **Programma:**
 

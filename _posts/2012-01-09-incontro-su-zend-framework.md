@@ -8,7 +8,7 @@ original_url: "https://torino.grusp.org/incontro-su-zend-framework/"
 redirect_from: ["/2012/01/incontro-su-zend-framework/"]
 ---
 
-[![](https://torino.grusp.org/wp-content/uploads/2012/01/locandina.jpg)](<https://torino.grusp.org/wp-content/uploads/2012/01/locandina.pdf>)Il PHP User Group di Torino organizza un incontro dal titolo:
+[![](/assets/uploads/2012/01/locandina.jpg)](</assets/uploads/2012/01/locandina.pdf>)Il PHP User Group di Torino organizza un incontro dal titolo:
 
 **"Sviluppo di applicazioni web in PHP con Zend Framework. Le novità della versione 2.0 e stato dell'arte del progetto"**
 
@@ -21,4 +21,4 @@ Sponsor dell'evento la società [Contur, idee e soluzioni per il turismo](<http:
 L'Holiday Inn di Piazza Massaua è facilmente raggiungibile con la metropolitana (fermata Massaua). La metropolitana può essere presa dalla stazione ferroviaria di Porta Nuova o di Porta Susa. L'hotel è situato a pochi metri dalla fermata Massaua della metropolitana.   
 Per chi arriva in auto è possibile usufruire del parcheggio interno dell'Holiday Inn.
 
-Qui potete scaricare la [locandina in PDF dell'evento](<https://torino.grusp.org/wp-content/uploads/2012/01/locandina.pdf>). Dateci una mano a pubblicizzare l'incontro, grazie.
+Qui potete scaricare la [locandina in PDF dell'evento](</assets/uploads/2012/01/locandina.pdf>). Dateci una mano a pubblicizzare l'incontro, grazie.

@@ -7,7 +7,7 @@ original_url: "https://torino.grusp.org/symfony-day/"
 redirect_from: ["/2012/08/symfony-day/"]
 ---
 
-[![](https://torino.grusp.org/wp-content/uploads/2012/08/symfony.jpg)](<http://www.symfonyday.it/>)
+[![](/assets/uploads/2012/08/symfony.jpg)](<http://www.symfonyday.it/>)
 
 Il [GrUSP](<http://www.grusp.it>), Gruppo Utenti Sviluppatori PHP, [PUG Torino](<https://torino.grusp.org>), [ideato](<http://www.ideato.it>) e [skuola.net](<http://www.skuola.net>) organizzano il primo evento italiano totalmente dedicato al framework web Symfony.
 

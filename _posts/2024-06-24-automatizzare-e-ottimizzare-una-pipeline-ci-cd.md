@@ -9,7 +9,7 @@ redirect_from: ["/2024/06/automatizzare-e-ottimizzare-una-pipeline-ci-cd/"]
 
 Lunedì 17 Giugno 2024 si è tenuto un meetup del PUG Torino con la presentazione di [Daniele Barbaro](<https://www.linkedin.com/in/barbarodaniele/>) sul tema dell'automazione e ottimizzazione di pipleline CI/CD su Github e GitLab.
 
-[![](https://torino.grusp.org/wp-content/uploads/2024/06/daniele_meetup.jpg)](<https://torino.grusp.org/wp-content/uploads/2024/06/daniele_meetup.jpg>)
+[![](/assets/uploads/2024/06/daniele_meetup.jpg)](</assets/uploads/2024/06/daniele_meetup.jpg>)
 
 Daniele ci ha introdotto all'argomento dell'automazione fornendo alcuni esempi con le workflow di Github Action e le pipeline di GitLab.
 

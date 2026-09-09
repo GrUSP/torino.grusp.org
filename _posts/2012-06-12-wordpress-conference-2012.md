@@ -8,7 +8,7 @@ original_url: "https://torino.grusp.org/wordpress-conference-2012/"
 redirect_from: ["/2012/06/wordpress-conference-2012/"]
 ---
 
-![](https://torino.grusp.org/wp-content/uploads/2012/06/wordpress.png) **Wordpress Conference 2012** , l'evento italiano dedicato a chi sviluppa e lavora con il CMS più famoso del mondo: Wordpress! La conferenza si terrà a **Torino** il 16 Giugno presso [Cascina Roccafranca](<http://www.cascinaroccafranca.it/>) in Via Edoardo Rubino, 45. Il **PHP User Group Torino** è lieto di patrocinare l'iniziativa. Durante la conferenza ci saranno due sessioni parallere dedicate ai _programmatori_ e ai _designer_ di Wordpress. Ecco il programma delle giornata:  Registrazione 9:00 - 09:30   
+![](/assets/uploads/2012/06/wordpress.png) **Wordpress Conference 2012** , l'evento italiano dedicato a chi sviluppa e lavora con il CMS più famoso del mondo: Wordpress! La conferenza si terrà a **Torino** il 16 Giugno presso [Cascina Roccafranca](<http://www.cascinaroccafranca.it/>) in Via Edoardo Rubino, 45. Il **PHP User Group Torino** è lieto di patrocinare l'iniziativa. Durante la conferenza ci saranno due sessioni parallere dedicate ai _programmatori_ e ai _designer_ di Wordpress. Ecco il programma delle giornata:  Registrazione 9:00 - 09:30   
 ---  
 KeyNotes (WordPress Oggi) 9:30 - 10:00   
 _Walter Dal Mut_ 10:00 - 11.00  
