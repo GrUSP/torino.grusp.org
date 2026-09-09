@@ -59,7 +59,21 @@ $bg-dark: #14140f;
 
 $brand-muted: round-color(color.scale($brand, $saturation: -35%));
 
+@mixin dark-tokens {
+  color-scheme: dark;
+  --bg: #{$bg-dark};
+  --bg-soft: #{round-color(color.mix($brand, $bg-dark, 6%))};
+  --fg: #ecebdf;
+  --fg-muted: #a5a390;
+
+  --accent: var(--brand);
+  --accent-soft: #{round-color(color.mix($brand, $bg-dark, 16%))};
+  --border: #{round-color(color.mix($brand-muted, $bg-dark, 16%))};
+}
+
 :root {
+
+  color-scheme: light;
   --brand: #{$brand};
   --brand-ink: #0d0d0d;  /* nero della Mole e del wordmark */
   --bg: #{$bg-light};
@@ -80,17 +94,10 @@ $brand-muted: round-color(color.scale($brand, $saturation: -35%));
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #{$bg-dark};
-    --bg-soft: #{round-color(color.mix($brand, $bg-dark, 6%))};
-    --fg: #ecebdf;
-    --fg-muted: #a5a390;
-
-    --accent: var(--brand);
-    --accent-soft: #{round-color(color.mix($brand, $bg-dark, 16%))};
-    --border: #{round-color(color.mix($brand-muted, $bg-dark, 16%))};
-  }
+  :root:not([data-theme="light"]) { @include dark-tokens; }
 }
+
+:root[data-theme="dark"] { @include dark-tokens; }
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -292,10 +299,15 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
   color: var(--brand-ink);
   color: color-mix(in srgb, var(--brand) 45%, black);
 }
-@media (prefers-color-scheme: dark) {
+@mixin dark-tag-ink {
 
   .tag { color: var(--accent); }
 }
+
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-theme="light"])) { @include dark-tag-ink; }
+}
+:where(:root[data-theme="dark"]) { @include dark-tag-ink; }
 .tag:hover { text-decoration: underline; }
 
 .tag.tag--cat {
