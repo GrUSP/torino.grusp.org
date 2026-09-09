@@ -6,3 +6,9 @@
   url: /chi-siamo/
 - title: Contatti
   url: /contatti/
+# Unica voce che porta fuori dal sito: external: true dice a header.html di
+# non passare l'URL a relative_url e di segnalarlo come link esterno.
+# L'URL sta anche in _config.yml (talk_form): se cambia, aggiorna entrambi.
+- title: Proponi un talk
+  url: https://forms.gle/tRwE85mCYzPwehTWA
+  external: true

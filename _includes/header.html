@@ -13,7 +13,18 @@
     <nav class="site-nav" aria-label="Navigazione principale">
       <ul>
         {%- for item in site.data.navigation -%}
+        {%- comment -%}
+          relative_url va applicato solo agli URL interni: su un URL assoluto ci
+          incollerebbe davanti il baseurl. Sono esterne le voci con external: true
+          e, per sicurezza, quelle il cui URL ha già uno schema.
+        {%- endcomment -%}
+        {%- assign is_external = false -%}
+        {%- if item.external or item.url contains '://' -%}{%- assign is_external = true -%}{%- endif -%}
+        {%- if is_external -%}
+        <li><a href="{{ item.url }}">{{ item.title }}<span class="sr-only"> (link esterno)</span></a></li>
+        {%- else -%}
         <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {%- endif -%}
         {%- endfor -%}
       </ul>
     </nav>
