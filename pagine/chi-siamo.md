@@ -14,6 +14,6 @@ Il PUG di Torino nasce dalla collaborazione con il [GrUSP]({{ site.social.grusp 
 
 ## Chi lo organizza
 
-A organizzare il PUG Torino sono [Enrico Zimuel](https://www.linkedin.com/in/ezimuel/) e [Daniele Barbaro](https://www.linkedin.com/in/barbarodaniele/). Se vuoi proporre un talk, segnalare un argomento di cui parlare o semplicemente dare una mano, sono loro le persone a cui rivolgersi.
+A organizzare il PUG Torino sono [Enrico Zimuel](https://www.linkedin.com/in/ezimuel/) e [Daniele Barbaro](https://www.linkedin.com/in/barbarodaniele/). Se vuoi proporre un talk c'è un [modulo apposta]({{ site.talk_form }}), che bastano pochi minuti per compilare. Per segnalare un argomento di cui parlare o semplicemente dare una mano, sono loro le persone a cui rivolgersi.
 
 Se sei interessato a partecipare al PUG Torino, puoi contattarci [cliccando qui]({{ '/contatti/' | relative_url }} "Modulo di contatto").

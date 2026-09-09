@@ -18,6 +18,7 @@ Ri-eseguendo l'import usa --skip-existing per non sovrascrivere questa pagina.
 Vuoi partecipare agli incontri del PUG Torino, proporre un talk o organizzare
 una serata insieme a noi? Scrivici:
 
+- **Proponi un talk:** [compila il modulo]({{ site.talk_form }}), bastano pochi campi per raccontarci di cosa vorresti parlare
 - **Email:** [pugtorino@gmail.com](mailto:pugtorino@gmail.com)
 - **Meetup:** [#PUGTO su Meetup]({{ site.social.meetup }}), dove annunciamo tutti gli incontri
 
