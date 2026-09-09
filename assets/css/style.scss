@@ -104,10 +104,18 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 }
 
 .skip-link {
-  position: absolute; left: -9999px; top: 0; background: var(--accent);
-  color: #fff; padding: .5rem 1rem; z-index: 10;
+  position: fixed; left: -9999px; top: 0; z-index: 10;
+  background: var(--brand); color: var(--brand-ink);
+  padding: .5rem 1rem; font-weight: 700;
+  border: 3px solid var(--brand-ink);
+  border-radius: 0 0 .375rem 0;
 }
-.skip-link:focus { left: 0; }
+
+.skip-link:focus {
+  left: 0;
+  outline: 3px solid var(--brand);
+  outline-offset: 0;
+}
 
 /* --- Header ---------------------------------------------------------------- */
 .site-header { border-bottom: 3px solid var(--brand-ink); background: var(--brand); color: var(--brand-ink); }
