@@ -1,16 +1,32 @@
 ---
 layout: default
 ---
-<div class="wrap">
+<div class="home">
   {%- if paginator.page == 1 or paginator.page == nil -%}
-  <section class="hero">
-    <img class="hero__banner" src="{{ site.banner | relative_url }}" alt="{{ site.title }}">
-    <h1 class="sr-only">{{ site.title }}</h1>
-    <p class="hero__tagline">{{ site.tagline }}</p>
-    <div class="hero__body">{{ content }}</div>
+  <section class="home-hero">
+    <div class="wrap home-hero__inner">
+      <div class="home-hero__copy">
+        <h1>Programmer User Group Torino</h1>
+        <div class="home-hero__body">{{ content }}</div>
+        <div class="home-hero__actions">
+          <a class="button button--dark" href="{{ site.social.meetup }}">Unisciti su Meetup</a>
+          <a class="button button--plain" href="#ultimi-articoli">Leggi gli incontri <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="home-hero__art" aria-hidden="true">
+        <img src="{{ '/assets/img/mole-hero.png' | relative_url }}" alt="">
+      </div>
+      <dl class="home-hero__stats">
+        <div><dt>800+</dt><dd>membri su Meetup</dd></div>
+        <div><dt>4,8</dt><dd>valutazione media</dd></div>
+        <div><dt>Dal 2011</dt><dd>incontri a Torino</dd></div>
+      </dl>
+    </div>
   </section>
   {%- else -%}
-  <h1 class="page__title">Articoli &mdash; pagina {{ paginator.page }}</h1>
+  <div class="wrap">
+    <h1 class="page__title">Articoli &mdash; pagina {{ paginator.page }}</h1>
+  </div>
   {%- endif -%}
 
     {%- if paginator.page == 1 or paginator.page == nil -%}
@@ -19,7 +35,12 @@ layout: default
     {%- assign evidenza = false -%}
   {%- endif -%}
 
-  <section class="post-list" aria-label="Ultimi articoli">
+  <section class="wrap home-feed" id="ultimi-articoli">
+    <header class="section-heading">
+      <p>Dal gruppo</p>
+      <h2>Ultimi incontri e storie</h2>
+    </header>
+    <div class="post-list">
     {%- for post in paginator.posts -%}
       {%- if evidenza and forloop.first -%}
         {%- include post-card.html post=post featured=true -%}
@@ -29,7 +50,7 @@ layout: default
     {%- else -%}
       <p class="empty">Nessun articolo pubblicato: importa i contenuti dal blog WordPress con <code>tools/import_wordpress.py</code>.</p>
     {%- endfor -%}
+    </div>
+    {%- include pagination.html -%}
   </section>
-
-  {%- include pagination.html -%}
 </div>
