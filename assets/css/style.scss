@@ -164,10 +164,16 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
   display: inline-block; margin: 0 .375rem .375rem 0; padding: .125rem .5rem;
   background: var(--accent-soft); border-radius: 999px;
   font-size: .8125rem; text-decoration: none;
+  color: var(--brand-ink);
+  color: color-mix(in srgb, var(--brand) 45%, black);
+}
+@media (prefers-color-scheme: dark) {
+
+  .tag { color: var(--accent); }
 }
 .tag:hover { text-decoration: underline; }
 
-.tag--cat {
+.tag.tag--cat {
   margin: 0; background: transparent; border: 1px solid var(--border);
   color: var(--fg-muted);
 }
