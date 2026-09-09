@@ -1,7 +1,7 @@
 ---
 title: "Strumenti di intelligenza artificiale per sviluppatori"
 date: 2025-04-18 10:03:25 +0200
-categories: ["uncategorized"]
+categories: ["sessioni"]
 tags: ["intelligenza-artificiale", "programmatori", "sviluppo-software", "vibe-coding"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/strumenti-di-intelligenza-artificiale-per-sviluppatori/"

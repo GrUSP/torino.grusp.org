@@ -1,7 +1,7 @@
 ---
 title: "Auguri di Natale con PHP 8.5"
 date: 2025-12-19 11:18:26 +0100
-categories: ["uncategorized"]
+categories: ["sessioni"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/auguri-di-natale-con-php-8-5/"
 redirect_from: ["/2025/12/auguri-di-natale-con-php-8-5/"]

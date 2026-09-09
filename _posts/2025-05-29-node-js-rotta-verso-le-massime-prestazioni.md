@@ -1,7 +1,7 @@
 ---
 title: "Node.js, rotta verso le massime prestazioni"
 date: 2025-05-29 12:22:11 +0200
-categories: ["uncategorized"]
+categories: ["sessioni"]
 tags: ["node-js", "performance", "sviluppo-software"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/node-js-rotta-verso-le-massime-prestazioni/"
