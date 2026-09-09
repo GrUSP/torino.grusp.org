@@ -168,3 +168,18 @@ input[type="submit"], button {
   cursor: pointer;
 }
 input[type="submit"]:hover, button:hover { filter: brightness(1.05); }
+
+/* --- Link esterni ----------------------------------------------------------
+   _plugins/external_links.rb marca con target="_blank" i soli link che escono
+   dal sito, dentro il corpo di articoli e pagine. La freccia avvisa che si
+   apre una scheda nuova: senza un segnale, il salto e' una sorpresa.
+   :not(:has(img)) tiene fuori le immagini linkate, dove la freccia in coda
+   non avrebbe senso. Nei browser senza :has il selettore viene ignorato e si
+   perde solo la decorazione. */
+.post__content a[target="_blank"]:not(:has(img))::after,
+.page__content a[target="_blank"]:not(:has(img))::after {
+  content: "\2197"; /* freccia in alto a destra */
+  display: inline-block; margin-left: .15em;
+  font-size: .8em; line-height: 1; text-decoration: none;
+  color: var(--fg-muted);
+}
