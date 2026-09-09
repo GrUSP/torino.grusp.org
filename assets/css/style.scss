@@ -71,7 +71,8 @@ $brand-muted: round-color(color.scale($brand, $saturation: -35%));
   --accent-soft: #{round-color(color.mix($brand, $bg-light, 45%))};
   --border: #{round-color(color.mix($brand-muted, $bg-light, 45%))};
 
-  --maxw: 64rem;
+  --maxw: 56rem;
+  --maxw-wide: 64rem;
   --font-body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --font-display: "Space Grotesk", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -104,7 +105,7 @@ body {
   background: var(--bg);
   color: var(--fg);
 
-  font: 1.125rem/1.65 var(--font-body);
+  font: 1.1875rem/1.6 var(--font-body);
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); }
@@ -163,6 +164,7 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 .site-header a { color: var(--brand-ink); }
 
 .site-header__inner {
+  max-width: var(--maxw-wide);
   display: flex; flex-wrap: wrap; gap: 1rem;
   align-items: center; justify-content: space-between;
   padding-top: 1rem; padding-bottom: 1rem;
@@ -231,7 +233,7 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 }
 .hero__tagline {
   font-family: var(--font-display);
-  font-weight: 700; font-size: 1.375rem; line-height: 1.35; letter-spacing: -.01em;
+  font-weight: 700; font-size: 1.5rem; line-height: 1.35; letter-spacing: -.01em;
   margin: 1.25rem 0 .5rem;
 }
 .hero__body { margin: 0; color: var(--fg-muted); }
@@ -275,12 +277,12 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 .meta__sep { opacity: .6; }
 .meta__terms { display: flex; flex-wrap: wrap; gap: .375rem; margin-left: .25rem; }
 
-.post__title { font-size: 2.375rem; line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.02em; }
-.page__title, .archive__title { font-size: 1.875rem; line-height: 1.2; margin: 0 0 .25rem; letter-spacing: -.015em; }
-.post__content h2 { font-size: 1.625rem; line-height: 1.3; margin-top: 2.25rem; letter-spacing: -.015em; }
-.post__content h3 { font-size: 1.375rem; line-height: 1.35; margin-top: 1.75rem; letter-spacing: -.01em; }
+.post__title { font-size: 2.5rem; line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.02em; }
+.page__title, .archive__title { font-size: 2rem; line-height: 1.2; margin: 0 0 .25rem; letter-spacing: -.015em; }
+.post__content h2 { font-size: 1.75rem; line-height: 1.3; margin-top: 2.25rem; letter-spacing: -.015em; }
+.post__content h3 { font-size: 1.5rem; line-height: 1.35; margin-top: 1.75rem; letter-spacing: -.01em; }
 
-.post__content, .page__content { line-height: 1.75; }
+.post__content, .page__content { line-height: 1.7; }
 .post__source { color: var(--fg-muted); font-size: .875rem; }
 
 .tag {
@@ -319,6 +321,7 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
   border-top: 3px solid var(--brand-ink); background: var(--bg-soft);
   padding: 2rem 0; font-size: .9375rem;
 }
+.site-footer__inner { max-width: var(--maxw-wide); }
 .site-footer__links { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; margin: 1rem 0; padding: 0; }
 .site-footer__legal { color: var(--fg-muted); font-size: .8125rem; margin: 0; }
 
