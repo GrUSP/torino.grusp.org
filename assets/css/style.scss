@@ -70,8 +70,8 @@ $brand-muted: round-color(color.scale($brand, $saturation: -35%));
   --accent: #{round-color(color.scale($brand, $lightness: -58%, $saturation: 60%))};
   --accent-soft: #{round-color(color.mix($brand, $bg-light, 45%))};
   --border: #{round-color(color.mix($brand-muted, $bg-light, 45%))};
-  --maxw: 46rem;
-  --maxw-wide: 64rem;
+
+  --maxw: 64rem;
   --font-body: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
   --font-display: "Space Grotesk", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -161,8 +161,8 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 /* --- Header ---------------------------------------------------------------- */
 .site-header { border-bottom: 3px solid var(--brand-ink); background: var(--brand); color: var(--brand-ink); }
 .site-header a { color: var(--brand-ink); }
+
 .site-header__inner {
-  max-width: var(--maxw-wide);
   display: flex; flex-wrap: wrap; gap: 1rem;
   align-items: center; justify-content: space-between;
   padding-top: 1rem; padding-bottom: 1rem;
@@ -319,7 +319,6 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
   border-top: 3px solid var(--brand-ink); background: var(--bg-soft);
   padding: 2rem 0; font-size: .9375rem;
 }
-.site-footer__inner { max-width: var(--maxw-wide); }
 .site-footer__links { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; margin: 1rem 0; padding: 0; }
 .site-footer__legal { color: var(--fg-muted); font-size: .8125rem; margin: 0; }
 
