@@ -6,9 +6,13 @@
   url: /chi-siamo/
 - title: Contatti
   url: /contatti/
-# Unica voce che porta fuori dal sito: external: true dice a header.html di
-# non passare l'URL a relative_url e di segnalarlo come link esterno.
+# external: true dice dove porta il link. header.html non passa l'URL a
+# relative_url e lo segnala come esterno a chi usa uno screen reader.
+# cta: true dice invece che ruolo ha la voce: è l'azione principale della
+# navigazione e prende la classe site-nav__cta, a cui il foglio di stile
+# aggancia l'aspetto da call to action.
 # L'URL sta anche in _config.yml (talk_form): se cambia, aggiorna entrambi.
 - title: Proponi un talk
   url: https://forms.gle/tRwE85mCYzPwehTWA
   external: true
+  cta: true
