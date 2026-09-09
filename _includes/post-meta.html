@@ -1,11 +1,10 @@
-<p class="meta">
+<p class="meta{% if include.context == 'card' %} meta--card{% endif %}">
   <time datetime="{{ include.post.date | date_to_xmlschema }}">{%- include date-it.html data=include.post.date -%}</time>
-  {%- if include.post.author %} &middot; <span class="meta__author">{{ include.post.author }}</span>{% endif -%}
-  {%- if include.post.categories and include.post.categories != empty %}
-  &middot;
+  {%- if include.post.author %} <span class="meta__sep" aria-hidden="true">&middot;</span> <span class="meta__author">{{ include.post.author }}</span>{% endif -%}
+  {%- if include.context != 'card' and include.post.categories and include.post.categories != empty %}
   <span class="meta__terms">
     {%- for cat in include.post.categories -%}
-    <a href="{{ '/category/' | append: cat | append: '/' | relative_url }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
+    <a class="tag tag--cat" href="{{ '/category/' | append: cat | append: '/' | relative_url }}">{{ cat }}</a>
     {%- endfor -%}
   </span>
   {%- endif -%}
