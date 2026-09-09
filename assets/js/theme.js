@@ -66,3 +66,22 @@
     systemDark.addEventListener('change', function () { render(current); });
   }
 })();
+
+(function () {
+  var button = document.querySelector('.menu-toggle');
+  var navigation = document.getElementById('site-navigation');
+  if (!button || !navigation) return;
+
+  button.addEventListener('click', function () {
+    var open = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', String(!open));
+    navigation.setAttribute('data-open', String(!open));
+  });
+
+  navigation.addEventListener('click', function (event) {
+    if (event.target.closest('a')) {
+      button.setAttribute('aria-expanded', 'false');
+      navigation.setAttribute('data-open', 'false');
+    }
+  });
+})();
