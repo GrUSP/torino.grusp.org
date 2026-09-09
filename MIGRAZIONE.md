@@ -9,7 +9,7 @@
 | Categorie, tag, autori, paginazione, feed, redirect vecchi permalink | fatto |
 | Workflow di build e deploy su GitHub Pages | fatto (nel repo) |
 | Attivazione di GitHub Pages nelle impostazioni del repo | **da fare a mano** (serve un permesso admin) |
-| Download dei media da `wp-content/uploads` | **da fare** (rete bloccata durante la migrazione) |
+| Download dei media da `wp-content/uploads` | fatto (27 file su 30, recuperati da Internet Archive) |
 | Logo e banner in `assets/img/` | **da caricare** (vedi `assets/img/README.md`) |
 | Cambio DNS di `torino.grusp.org` verso GitHub Pages | fatto |
 
@@ -25,45 +25,37 @@ oppure con il primo push su `main`). L'anteprima sarà su
 > L'API Pages non è raggiungibile dall'ambiente in cui è stata preparata la
 > migrazione, quindi questo passaggio va fatto dall'interfaccia web.
 
-## 2. Portare i media dentro al repository (in sospeso)
+## 2. Portare i media dentro al repository (fatto, con due buchi)
 
-Gli articoli referenziano ancora immagini e slide su
+Gli articoli referenziavano immagini e slide su
 `https://torino.grusp.org/wp-content/uploads/...`. Il DNS è già stato girato,
-quindi quelle URL le serve GitHub Pages, che non le ha: **30 file (37
-riferimenti) risultano mancanti**. L'elenco completo, con il percorso locale
-atteso e gli articoli che li usano, è in `_import/media-mancanti.txt`.
+quindi quelle URL le serve GitHub Pages, che non le ha: erano 30 file (37
+riferimenti) tutti in 404.
 
-Non essendo più raggiungibile il vecchio sito, vanno recuperati dal backup
-della cartella `wp-content/uploads` del vecchio hosting e copiati in
-`assets/uploads/` mantenendo la struttura `AAAA/MM/`. Poi si riscrivono i link
-negli articoli:
-
-```bash
-python3 tools/import_wordpress.py --wxr _import/torino.wordpress.xml \
-  --rewrite-media --skip-slug mailing-list
-```
-
-Se invece il vecchio sito fosse ancora raggiungibile da qualche parte (per IP o
-con un hostname temporaneo), lo scaricamento automatico è ancora possibile:
+Il vecchio hosting non è più raggiungibile e non è saltato fuori un backup
+degli upload, ma quasi tutti quei file sono su Internet Archive. Li recupera
+`tools/fetch_wayback_media.py`, che li scarica in `assets/uploads/` con la
+struttura `AAAA/MM/` e poi riscrive i link negli articoli:
 
 ```bash
-python3 tools/import_wordpress.py \
-  --wxr _import/torino.wordpress.xml \
-  --download-media \
-  --skip-existing \
-  --skip-slug mailing-list
+python3 tools/fetch_wayback_media.py --dry-run   # cosa farebbe
+python3 tools/fetch_wayback_media.py --rewrite   # scarica e riscrive i link
 ```
 
-`--skip-existing` non tocca le pagine modificate a mano (es. `pagine/contatti.md`);
-`--skip-slug mailing-list` evita di ricreare la pagina della mailing list, che è
-stata dismessa e la cui URL ora redirige su `/contatti/`.
+Lo script ricava l'elenco scandendo `_posts/` e `pagine/`, non da un file di
+appoggio: resta valido anche quando la documentazione invecchia. Scarta le
+catture illeggibili (pagine di errore servite con codice 200, PDF tronchi) e
+riprova su snapshot più vecchi.
 
-Lo script scarica i file in `assets/uploads/` (stessa struttura `AAAA/MM/`) e
-riscrive i link nei post. Poi commit e push.
+Risultato: **27 file su 30 recuperati**. Restano fuori le due foto del meetup
+del 18 dicembre 2025, mai archiviate, più le slide Node.js di maggio 2025, che
+sono state recuperate ma pesano 14 MB e per ora vivono su Internet Archive
+invece che nel repository. Dettagli e cosa resta da fare a mano in
+`_import/media-mancanti.txt`.
 
-Nota: `--skip-existing` non riscrive i post già presenti. Per rigenerarli con i
-link locali togli l'opzione (e ricontrolla `pagine/contatti.md`, che è scritta
-a mano perché il form Jetpack non esiste più).
+> **Non** usare `tools/import_wordpress.py --rewrite-media` per riscrivere i
+> link: rigenera i post dall'export WXR e cancella le modifiche fatte a mano,
+> a partire da `pagine/contatti.md`.
 
 ## 3. Logo e banner
 
@@ -108,7 +100,8 @@ warning.
 - [ ] Categorie (`/category/conferenze/`) e tag (`/tag/php/`)
 - [ ] Un vecchio permalink datato, es. `/2015/04/php-7-e-architetture-middleware/`
 - [ ] Feed su `/feed.xml` e redirect da `/feed/`
-- [ ] Immagini degli articoli servite da `assets/uploads/`
+- [x] Immagini degli articoli servite da `assets/uploads/` (tranne le due foto
+      del 18 dicembre 2025, vedi `_import/media-mancanti.txt`)
 - [ ] Redirect da `/mailing-list/` a `/contatti/` (la mailing list e' stata dismessa)
 - [ ] `sitemap.xml` e `robots.txt` (generati da `jekyll-sitemap`)
 
@@ -119,6 +112,7 @@ warning.
 | `tools/export_wordpress_feeds.sh` | Scarica feed RSS/Atom, API REST e sitemap del sito WordPress in `_import/` |
 | `tools/fetch_assets.sh` | Scarica logo, favicon e immagini della home in `assets/img/originali/` |
 | `tools/import_wordpress.py` | Converte l'export WXR (o i feed) in post e pagine Jekyll, con media e redirect |
+| `tools/fetch_wayback_media.py` | Recupera da Internet Archive i media di `wp-content/uploads` e riscrive i link negli articoli |
 
 `tools/import_wordpress.py --help` elenca tutte le opzioni
 (`--dry-run`, `--format html`, `--include-drafts`, `--limit`, ...).
