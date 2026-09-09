@@ -32,6 +32,8 @@ check "e-nato-il-pug-torino/index.html"                    "primo articolo (2011
 check "auguri-di-natale-con-php-8-5/index.html"            "ultimo articolo (2025)"
 check "category/conferenze/index.html"                     "categoria"
 check "category/comunicazioni/index.html"                  "categoria"
+check "category/sessioni/index.html"                       "categoria"
+check "category/uncategorized/index.html"                  "redirect dalla categoria di default di WordPress"
 check "tag/php-to-start/index.html"                        "tag"
 
 echo "== Feed, sitemap e redirect =="
@@ -45,6 +47,13 @@ if grep -q '/contatti/' "$SITE/mailing-list/index.html" 2>/dev/null; then
   echo "  ok   /mailing-list/ redirige verso /contatti/"
 else
   echo "  FAIL /mailing-list/ non redirige verso /contatti/"
+  fail=1
+fi
+
+if grep -q '/category/sessioni/' "$SITE/category/uncategorized/index.html" 2>/dev/null; then
+  echo "  ok   /category/uncategorized/ redirige verso /category/sessioni/"
+else
+  echo "  FAIL /category/uncategorized/ non redirige verso /category/sessioni/"
   fail=1
 fi
 
