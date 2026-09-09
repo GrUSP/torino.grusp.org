@@ -10,6 +10,7 @@ URL, contenuti e feed.
 _config.yml            configurazione del sito (titolo, permalink, plugin)
 _layouts/              default, home, post, page, archive
 _includes/             head, header, footer, card articolo, meta, paginazione
+_plugins/              external_links.rb: i link esterni negli articoli aprono una scheda nuova
 _posts/                26 articoli importati da WordPress (AAAA-MM-GG-slug.md)
 pagine/                pagine statiche (chi siamo, contatti, archivio)
 assets/css/style.scss  tema, con i design token in cima al file
