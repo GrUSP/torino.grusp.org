@@ -13,6 +13,7 @@ _includes/             head, header, footer, card articolo, meta, paginazione
 _posts/                26 articoli importati da WordPress (AAAA-MM-GG-slug.md)
 pagine/                pagine statiche (chi siamo, contatti, archivio)
 assets/css/style.scss  tema, con i design token in cima al file
+assets/fonts/          Space Grotesk e Inter (woff2 variabili) con le licenze OFL
 assets/img/            logo e banner — vedi assets/img/README.md
 tools/                 script di export dal sito WordPress e di import in Jekyll
 _import/               export WordPress originale (WXR) usato per la migrazione

@@ -1,6 +1,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/inter-latin.woff2' | relative_url }}" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="{{ '/assets/fonts/space-grotesk-latin.woff2' | relative_url }}" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {%- assign favicon_file = site.static_files | where: "path", site.logo | first -%}
   {%- if favicon_file %}
