@@ -72,6 +72,14 @@ kramdown:
 sass:
   style: compressed
 
+# --- Link esterni ------------------------------------------------------------
+# Vedi _plugins/external_links.rb: i link che escono dal sito, dentro il corpo
+# di articoli e pagine, aprono una scheda nuova. Metti target_blank a false per
+# spegnere il comportamento senza cancellare il plugin.
+external_links:
+  target_blank: true
+  rel: "noopener noreferrer"
+
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
