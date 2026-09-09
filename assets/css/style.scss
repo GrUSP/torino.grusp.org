@@ -335,21 +335,32 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 }
 .site-footer__inner { max-width: var(--maxw-wide); }
 .site-footer__links { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; margin: 1rem 0; padding: 0; }
-.site-footer__legal { color: var(--fg-muted); font-size: .8125rem; margin: 0; }
+
+.site-footer__legal {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+  color: var(--fg-muted); font-size: .8125rem; margin: 0;
+}
+
+.site-footer__legal-text { min-width: 0; }
 
 .theme-toggle[hidden] { display: none; }
 
 .theme-toggle {
   display: inline-flex; align-items: center; justify-content: center;
+  flex: 0 0 auto;
+  padding: 10px; margin: 0;
   min-width: 44px; min-height: 44px;
-  padding: 0; margin: 1rem 0;
-
-  border: 1px solid var(--fg-muted); border-radius: .375rem;
+  border: 0; border-radius: 50%;
   background: transparent; color: var(--fg);
   cursor: pointer;
 }
 
-.theme-toggle:hover { background: var(--accent-soft); filter: none; }
+.theme-toggle:hover {
+  background: var(--accent-soft);
+  background: color-mix(in srgb, var(--fg) 18%, transparent);
+  filter: none;
+}
 
 .theme-toggle:focus-visible {
   outline: 3px solid var(--fg);
