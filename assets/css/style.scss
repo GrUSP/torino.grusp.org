@@ -360,6 +360,30 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
 .site-footer__links { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; margin: 1rem 0; padding: 0; }
 .site-footer__legal { color: var(--fg-muted); font-size: .8125rem; margin: 0; }
 
+.theme-toggle[hidden] { display: none; }
+
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px;
+  padding: 0; margin: 1rem 0;
+
+  border: 1px solid var(--fg-muted); border-radius: .375rem;
+  background: transparent; color: var(--fg);
+  cursor: pointer;
+}
+
+.theme-toggle:hover { background: var(--accent-soft); filter: none; }
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 3px;
+}
+
+.theme-toggle__icon { display: none; width: 24px; height: 24px; }
+.theme-toggle[data-theme-state="system"] .theme-toggle__icon--system,
+.theme-toggle[data-theme-state="light"] .theme-toggle__icon--light,
+.theme-toggle[data-theme-state="dark"] .theme-toggle__icon--dark { display: block; }
+
 /* --- Form (iscrizione mailing list) ---------------------------------------- */
 form { margin: 1.25rem 0; }
 input[type="text"], input[type="email"] {
