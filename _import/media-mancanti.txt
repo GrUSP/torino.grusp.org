@@ -17,14 +17,23 @@ NON usare `tools/import_wordpress.py --rewrite-media`: rigenera i post
 dall'export WXR e cancella le modifiche fatte a mano.
 
 
-## 1. File senza nessuno snapshot su Wayback (2)
+## 1. File senza nessuno snapshot su Wayback (1 ancora scoperto)
 
-Sono le due foto del meetup del 18 dicembre 2025. Wayback risponde 404 su
-entrambe: non sono mai state archiviate. Gli articoli le referenziano ancora
-sul vecchio dominio, di proposito, per non far sparire il posto che occupavano.
+Le due foto del meetup del 18 dicembre 2025. Wayback risponde 404 su entrambe:
+non sono mai state archiviate.
 
-    2025/12/meetup_18_12_2025.jpg
-    2025/12/meetup_18_12_2025_2.jpg
+Il primo posto e' stato riempito con una foto della serata fornita da Daniele,
+salvata come 2025/12/meetup_18_12_2025_presentazione.jpg. Non e' il file
+originale di WordPress, e' un'altra foto dello stesso incontro: per questo ha
+un nome diverso invece di riusare quello vecchio.
+
+Resta scoperta la foto di fine serata, in fondo all'articolo, che continua a
+puntare sul vecchio dominio di proposito per non far sparire il posto che
+occupava. Se salta fuori, basta copiarla in assets/uploads/2025/12/ e
+riscrivere il link.
+
+    2025/12/meetup_18_12_2025.jpg          <- ancora da trovare
+    2025/12/meetup_18_12_2025_2.jpg        <- sostituita, vedi sopra
         usate in: _posts/2025-12-19-auguri-di-natale-con-php-8-5.md
 
 Da chiedere a Daniele ed Enrico, che probabilmente le hanno ancora, oppure da

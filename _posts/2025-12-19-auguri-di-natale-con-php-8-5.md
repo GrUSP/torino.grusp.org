@@ -10,7 +10,7 @@ redirect_from: ["/2025/12/auguri-di-natale-con-php-8-5/"]
 
 Il 18 Dicembre 2025 si è tenuto l'ultimo meetup dell'anno presso il [Toolbox coworking di Torino](<https://toolboxcoworking.com/>) con una presentazione delle novità del [PHP 8.5](<https://www.php.net/releases/8.5/en.php>), un linguaggio che continua a sfornare novità ogni anno.
 
-[![](https://torino.grusp.org/wp-content/uploads/2025/12/meetup_18_12_2025_2.jpg)](<https://torino.grusp.org/wp-content/uploads/2025/12/meetup_18_12_2025_2.jpg>)
+[![Daniele Barbaro ed Enrico Zimuel durante la presentazione delle novità di PHP 8.5 al Toolbox coworking di Torino](/assets/uploads/2025/12/meetup_18_12_2025_presentazione.jpg)](</assets/uploads/2025/12/meetup_18_12_2025_presentazione.jpg>)
 
 [Daniele Barbaro](<https://www.linkedin.com/in/barbarodaniele/>) ed [Enrico Zimuel](<https://www.zimuel.it/>) ci hanno presentato alcune delle novità più rilevanti di questa ultima versione del PHP come l'[operatore pipe](<https://wiki.php.net/rfc/pipe-operator-v3>), le nuove funzioni [array_first()](<https://www.php.net/manual/en/function.array-first.php>) e [array_last()](<https://www.php.net/manual/en/function.array-last.php>), la possibilità di inserire [attributi sulle costanti](<https://wiki.php.net/rfc/attributes-on-constants>) e altro.
 
