@@ -19,7 +19,7 @@ L'insegnamento del PHP, come linguaggio per lo sviluppo di applicazioni web, sem
 Per quanto riguarda più da vicino il PUG Torino il PHP.TO.START è stato un evento storico perchè, di fatto, ha rappresentato il nostro il primo intervento ubblico.  
 Abbiamo semplicemente annunciato l'esistenza del gruppo dando i nostri riferimenti per chi volesse condividere con noi la passione per il PHP.
 
-![](https://torino.grusp.org/wp-content/uploads/2011/07/php.to_.start_-300x300.jpg)  
+![](/assets/uploads/2011/07/php.to_.start_-300x300.jpg)  
 Un intervento breve ma significativo, con la speranza, come gruppo, di crescere numericamente e sensibilizzare l'opinione pubblica torinese su questo linguaggio di programmazione.
 
 Ringraziamo gli organizzatori del PHP.TO.START: Skuola.net, [Indigeni Digitali](<http://blog.indigenidigitali.com/>) ed in particolar modo [Fabio Lalli](<http://fabiolalli.com/>), per averci dato la possibilità di partecipare attivamente a quest'evento.

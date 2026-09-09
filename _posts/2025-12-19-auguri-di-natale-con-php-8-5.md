@@ -15,7 +15,7 @@ Il 18 Dicembre 2025 si è tenuto l'ultimo meetup dell'anno presso il [Toolbox co
 
 Per quanto riguarda le performance del PHP 8.5 rimangono praticamente inalterate rispetto a quelle del PHP 8.4 con qualche micro ottimizzazione come il [controllo di un array vuoto](<https://tideways.com/profiler/blog/whats-new-in-php-8-5-in-terms-of-performance-debugging-and-operations>) tramite === [] oppure l'ottimizzazione della funzione [match(true)](<https://github.com/php/php-src/pull/18423>).
 
-[Qui](<https://torino.grusp.org/wp-content/uploads/2025/12/Meetup_PHP85.pdf>) potete scaricare le slide dell'evento.
+[Qui](</assets/uploads/2025/12/Meetup_PHP85.pdf>) potete scaricare le slide dell'evento.
 
 Dopo la presentazione abbiamo approfittato per scambiarci gli auguri e andare a mangiare una pizza presso la solita pizzeria [Turati 39](<https://turati39pizzeria.it/>). Buone feste dal PUG Torino!
 

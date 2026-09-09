@@ -8,7 +8,7 @@ original_url: "https://torino.grusp.org/programmazione-asincrona-in-php/"
 redirect_from: ["/2018/05/programmazione-asincrona-in-php/"]
 ---
 
-![Swoole](https://torino.grusp.org/wp-content/uploads/2018/05/swoole_evento.png)
+![Swoole](/assets/uploads/2018/05/swoole_evento.png)
 
 Nell'incontro di Giugno 2018 del PUG Torino si parlerà di programmazione asincrona in PHP tramite l'utilizzo del framework [Swoole](<https://www.swoole.co.uk>).  
 Swoole consente di sviluppare applicazioni PHP asincrone senza la complessità legata alla programmazione non-blocking I/O o l'utilizzo di primitive POSIX come pthreads.  
