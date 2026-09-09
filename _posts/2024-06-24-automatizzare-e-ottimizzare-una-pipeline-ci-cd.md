@@ -1,7 +1,7 @@
 ---
 title: "Automatizzare e ottimizzare una pipeline CI/CD"
 date: 2024-06-24 10:39:13 +0200
-categories: ["uncategorized"]
+categories: ["sessioni"]
 author: "Enrico"
 original_url: "https://torino.grusp.org/automatizzare-e-ottimizzare-una-pipeline-ci-cd/"
 redirect_from: ["/2024/06/automatizzare-e-ottimizzare-una-pipeline-ci-cd/"]
