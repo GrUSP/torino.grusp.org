@@ -25,6 +25,7 @@ author:
 social:
   meetup: "https://www.meetup.com/pugto-php-user-group-torino/"
   grusp: "https://www.grusp.org/"
+  github: "https://github.com/GrUSP/torino.grusp.org"
 
 # Modulo Google con cui si propone un talk per un incontro.
 talk_form: "https://forms.gle/tRwE85mCYzPwehTWA"
