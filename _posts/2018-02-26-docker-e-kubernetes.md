@@ -4,6 +4,7 @@ date: 2018-02-26 08:22:35 +0100
 categories: ["comunicazioni"]
 tags: ["docker", "kubernetes", "devops"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/247313984/"
 original_url: "https://torino.grusp.org/docker-e-kubernetes/"
 redirect_from: ["/2018/02/docker-e-kubernetes/"]
 ---

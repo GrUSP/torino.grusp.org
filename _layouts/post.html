@@ -12,24 +12,19 @@ layout: default
       {{ content }}
     </div>
 
-    {%- if page.tags and page.tags != empty -%}
-    <p class="post__tags">
-      {%- for tag in page.tags -%}
-      <a class="tag" href="{{ '/tag/' | append: tag | append: '/' | relative_url }}">#{{ tag }}</a>
-      {%- endfor -%}
-    </p>
-    {%- endif -%}
-
-    {%- comment -%}
-    Quasi tutti i post hanno original_url perché arrivano dall'import di
-    WordPress, e punta a questa stessa pagina: citarla come fonte sarebbe un
-    rimando a se stessi. La riga si vede solo se l'articolo è stato pubblicato
-    altrove, cioè su un dominio diverso da quello del sito.
-    {%- endcomment -%}
-    {%- assign source_host = page.original_url | split: '//' | last | split: '/' | first -%}
-    {%- assign site_host = site.url | split: '//' | last | split: '/' | first -%}
-    {%- if page.original_url and source_host != site_host -%}
-    <p class="post__source">Pubblicato originariamente su <a href="{{ page.original_url }}">{{ page.original_url }}</a>.</p>
+    {%- if page.tags and page.tags != empty or page.meetup_url -%}
+    <div class="post__taxonomy-row">
+      {%- if page.tags and page.tags != empty -%}
+      <p class="post__tags">
+        {%- for tag in page.tags -%}
+        <a class="tag" href="{{ '/tag/' | append: tag | append: '/' | relative_url }}">#{{ tag }}</a>
+        {%- endfor -%}
+      </p>
+      {%- endif -%}
+      {%- if page.meetup_url -%}
+      <p class="post__event"><a class="post__meetup" href="{{ page.meetup_url }}" target="_blank" rel="noopener">Vedi l’evento su Meetup <span aria-hidden="true">↗</span></a></p>
+      {%- endif -%}
+    </div>
     {%- endif -%}
 
     <nav class="post-nav" aria-label="Altri articoli">

@@ -4,6 +4,7 @@ date: 2025-05-29 12:22:11 +0200
 categories: ["sessioni"]
 tags: ["node-js", "performance", "sviluppo-software"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/307715797/"
 original_url: "https://torino.grusp.org/node-js-rotta-verso-le-massime-prestazioni/"
 redirect_from: ["/2025/05/node-js-rotta-verso-le-massime-prestazioni/"]
 ---
