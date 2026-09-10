@@ -27,11 +27,12 @@
         {%- assign is_external = false -%}
         {%- if item.external or item.url contains '://' -%}{%- assign is_external = true -%}{%- endif -%}
         {%- if is_external -%}
-        <li><a href="{{ item.url }}"{% if item.cta %} class="site-nav__cta"{% endif %}>{{ item.title }}<span class="sr-only"> (link esterno)</span></a></li>
+        <li><a href="{{ item.url }}" target="_blank" rel="noopener"{% if item.cta %} class="site-nav__cta"{% endif %}>{{ item.title }}<span class="sr-only"> (link esterno)</span></a></li>
         {%- else -%}
         <li><a href="{{ item.url | relative_url }}"{% if item.cta %} class="site-nav__cta"{% endif %}{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
         {%- endif -%}
         {%- endfor -%}
+        <li class="site-nav__meetup-mobile"><a href="{{ site.social.meetup }}" target="_blank" rel="noopener">Unisciti su Meetup</a></li>
       </ul>
     </nav>
   </div>
