@@ -445,6 +445,11 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
   transition: border-color 180ms ease, transform 180ms ease;
 }
 
+@media (max-width: 47.99rem) {
+  .post__event { flex: 0 0 100%; margin-left: 0; margin-top: .75rem; }
+  .post__meetup { display: flex; width: 100%; justify-content: center; }
+}
+
 .post__meetup:hover { border-color: var(--accent); transform: translateY(-1px); }
 .post__meetup:active { transform: translateY(0); }
 .post__meetup:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
