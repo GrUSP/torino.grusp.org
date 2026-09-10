@@ -394,7 +394,7 @@ th, td { border: 1px solid var(--border); padding: .5rem .625rem; text-align: le
   .menu-toggle[aria-expanded="true"] .menu-toggle__icon i:first-child { transform: translateY(3px) rotate(45deg); }
   .menu-toggle[aria-expanded="true"] .menu-toggle__icon i:last-child { transform: translateY(-3px) rotate(-45deg); }
   .menu-toggle:focus-visible { outline: 3px solid var(--brand-ink); outline-offset: 3px; }
-  .site-nav { display: none; grid-column: 1 / -1; grid-row: 2; }
+  .site-nav { display: none; grid-column: 1 / -1; grid-row: 2; background-color: var(--brand); }
   .site-nav[data-open="true"] { display: block; }
   .site-nav ul { display: grid; gap: 0; justify-content: stretch; border-top: 1px solid rgba(13, 13, 13, .28); }
   .site-nav li { border-bottom: 1px solid rgba(13, 13, 13, .18); }
