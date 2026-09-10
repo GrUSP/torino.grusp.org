@@ -4,6 +4,7 @@ date: 2017-11-20 10:25:27 +0100
 categories: ["comunicazioni", "sessioni"]
 tags: ["php", "blockchain", "libri", "novita-php"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/244892847/"
 original_url: "https://torino.grusp.org/incontro-su-blockchain-e-presentazione-libro-sviluppare-in-php-7/"
 redirect_from: ["/2017/11/incontro-su-blockchain-e-presentazione-libro-sviluppare-in-php-7/"]
 ---

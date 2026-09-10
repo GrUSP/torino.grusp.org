@@ -4,6 +4,7 @@ date: 2020-01-09 12:45:32 +0100
 categories: ["sessioni"]
 tags: ["php", "novita-php"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/264156027/"
 original_url: "https://torino.grusp.org/le-novita-del-php-7-4/"
 redirect_from: ["/2020/01/le-novita-del-php-7-4/"]
 ---

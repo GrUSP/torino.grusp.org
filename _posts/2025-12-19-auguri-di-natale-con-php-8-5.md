@@ -4,6 +4,7 @@ date: 2025-12-19 11:18:26 +0100
 categories: ["sessioni"]
 tags: ["php", "novita-php", "performance"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/312250300/"
 original_url: "https://torino.grusp.org/auguri-di-natale-con-php-8-5/"
 redirect_from: ["/2025/12/auguri-di-natale-con-php-8-5/"]
 ---

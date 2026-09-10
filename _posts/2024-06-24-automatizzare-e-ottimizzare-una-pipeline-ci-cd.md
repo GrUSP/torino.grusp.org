@@ -4,6 +4,7 @@ date: 2024-06-24 10:39:13 +0200
 categories: ["sessioni"]
 tags: ["ci-cd", "devops"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/301292940/"
 original_url: "https://torino.grusp.org/automatizzare-e-ottimizzare-una-pipeline-ci-cd/"
 redirect_from: ["/2024/06/automatizzare-e-ottimizzare-una-pipeline-ci-cd/"]
 ---

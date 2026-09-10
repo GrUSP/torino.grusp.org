@@ -4,6 +4,7 @@ date: 2018-05-23 10:11:25 +0200
 categories: ["comunicazioni", "sessioni"]
 tags: ["swoole"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/251041720/"
 original_url: "https://torino.grusp.org/programmazione-asincrona-in-php/"
 redirect_from: ["/2018/05/programmazione-asincrona-in-php/"]
 ---

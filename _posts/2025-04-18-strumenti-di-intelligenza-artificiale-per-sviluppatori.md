@@ -4,6 +4,7 @@ date: 2025-04-18 10:03:25 +0200
 categories: ["sessioni"]
 tags: ["intelligenza-artificiale", "programmatori", "sviluppo-software", "vibe-coding"]
 author: "Enrico"
+meetup_url: "https://www.meetup.com/pug-torino/events/306842763/"
 original_url: "https://torino.grusp.org/strumenti-di-intelligenza-artificiale-per-sviluppatori/"
 redirect_from: ["/2025/04/strumenti-di-intelligenza-artificiale-per-sviluppatori/"]
 ---
