@@ -64,7 +64,11 @@ date: 2026-09-15 19:00:00 +0200
 categories: ["sessioni"]
 tags: ["php", "torino"]
 author: "Nome Cognome"
+meetup_url: "https://www.meetup.com/pug-torino/events/123456789/"
 ---
 ```
+
+`meetup_url` è facoltativo. Quando presente, aggiunge all'articolo il link
+all'evento corrispondente su Meetup.
 
 Per re-importare da WordPress vedi [MIGRAZIONE.md](MIGRAZIONE.md).
