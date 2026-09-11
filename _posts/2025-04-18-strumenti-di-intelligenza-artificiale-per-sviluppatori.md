@@ -9,7 +9,7 @@ original_url: "https://torino.grusp.org/strumenti-di-intelligenza-artificiale-pe
 redirect_from: ["/2025/04/strumenti-di-intelligenza-artificiale-per-sviluppatori/"]
 ---
 
-[![](/assets/uploads/2025/04/foto_pug_torino_17_aprile_2025-1024x766.jpg)](</assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg>)
+[![](/assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg)](</assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg>)
 
 Nell'ultimo incontro del 17 Aprile 2025 presso il [Toolbox Coworking](<https://toolboxcoworking.com/>) di Torino abbiamo parlato degli strumenti di intelligenza artificiale disponibili per gli sviluppatori.
 
