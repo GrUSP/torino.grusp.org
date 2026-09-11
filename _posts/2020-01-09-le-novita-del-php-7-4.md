@@ -7,6 +7,7 @@ author: "Enrico"
 meetup_url: "https://www.meetup.com/pug-torino/events/264156027/"
 original_url: "https://torino.grusp.org/le-novita-del-php-7-4/"
 redirect_from: ["/2020/01/le-novita-del-php-7-4/"]
+image: "/assets/uploads/2020/01/meetup_php74-1024x768.jpg"
 ---
 
 Il [PHP 7.4](<https://www.php.net/ChangeLog-7.php#7.4.0>) è stato rilasciato il 28 Novembre 2019 con numerose ed importanti novità. Alcune di queste sono:

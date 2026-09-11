@@ -5,6 +5,7 @@ categories: ["sessioni"]
 tags: ["intelligenza-artificiale", "libri", "programmatori", "sviluppo-software"]
 author: "Daniele"
 meetup_url: "https://www.meetup.com/pug-torino/events/314564795/"
+image: "/assets/uploads/2026/05/meetup_28_05_2026.jpg"
 ---
 
 Giovedì 28 Maggio 2026 presso il [Toolbox Coworking](https://toolboxcoworking.com/) di Torino si è tenuta una serata informale, più discussione che talk, su cosa stia davvero succedendo nello sviluppo software con l'arrivo dell'intelligenza artificiale.

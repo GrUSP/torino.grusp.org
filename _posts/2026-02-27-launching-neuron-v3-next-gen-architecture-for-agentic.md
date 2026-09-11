@@ -5,6 +5,7 @@ categories: ["sessioni"]
 tags: ["php", "intelligenza-artificiale", "open-source"]
 author: "Daniele"
 meetup_url: "https://www.meetup.com/pug-torino/events/313128331/"
+image: "/assets/uploads/2026/02/meetup_26_02_2026.jpg"
 ---
 
 Giovedì 26 Febbraio 2026 il PUG Torino ha ospitato presso il [Toolbox Coworking](https://toolboxcoworking.com/) di Torino [Valerio Barbera](https://www.linkedin.com/in/valeriobarbera/), creatore del framework open source [Neuron AI](https://www.neuron-ai.dev/), per la presentazione di **Neuron v3**, la nuova architettura pensata per sviluppare applicazioni agentiche in PHP.
