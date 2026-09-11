@@ -5,6 +5,7 @@ categories: ["sessioni"]
 tags: ["intelligenza-artificiale", "vibe-coding", "sviluppo-software"]
 author: "Daniele"
 meetup_url: "https://www.meetup.com/pug-torino/events/311282568/"
+image: "/assets/uploads/2025/10/meetup_14_10_2025.jpg"
 ---
 
 Martedì 14 Ottobre 2025 presso il [Toolbox Coworking](https://toolboxcoworking.com/) di Torino abbiamo parlato di come usare l'intelligenza artificiale nello sviluppo web andando oltre il cosiddetto "vibe coding".

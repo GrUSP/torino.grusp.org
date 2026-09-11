@@ -65,10 +65,16 @@ categories: ["sessioni"]
 tags: ["php", "torino"]
 author: "Nome Cognome"
 meetup_url: "https://www.meetup.com/pug-torino/events/123456789/"
+image: /assets/uploads/2026/09/meetup_15_09_2026.jpg
 ---
 ```
 
 `meetup_url` è facoltativo. Quando presente, aggiunge all'articolo il link
 all'evento corrispondente su Meetup.
+
+`image` è facoltativo ed è l'anteprima che compare quando si condivide il link
+(WhatsApp, Telegram, LinkedIn, social). Usa la foto della serata, con lato
+lungo di 1600 px e un peso sotto i 400 KB. Senza `image` l'anteprima è
+`assets/img/social-card.jpg`, il logo su fondo giallo.
 
 Per re-importare da WordPress vedi [MIGRAZIONE.md](MIGRAZIONE.md).

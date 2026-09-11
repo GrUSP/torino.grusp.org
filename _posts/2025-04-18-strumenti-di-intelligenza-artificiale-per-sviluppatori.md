@@ -7,6 +7,7 @@ author: "Enrico"
 meetup_url: "https://www.meetup.com/pug-torino/events/306842763/"
 original_url: "https://torino.grusp.org/strumenti-di-intelligenza-artificiale-per-sviluppatori/"
 redirect_from: ["/2025/04/strumenti-di-intelligenza-artificiale-per-sviluppatori/"]
+image: "/assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg"
 ---
 
 [![](/assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg)](</assets/uploads/2025/04/foto_pug_torino_17_aprile_2025.jpg>)

@@ -7,6 +7,7 @@ author: "Enrico"
 meetup_url: "https://www.meetup.com/pug-torino/events/307715797/"
 original_url: "https://torino.grusp.org/node-js-rotta-verso-le-massime-prestazioni/"
 redirect_from: ["/2025/05/node-js-rotta-verso-le-massime-prestazioni/"]
+image: "/assets/uploads/2025/05/incontro_nodejs_28_maggio_2.jpeg"
 ---
 
 [![](/assets/uploads/2025/05/incontro_nodejs_28_maggio_2.jpeg)](</assets/uploads/2025/05/incontro_nodejs_28_maggio_2.jpeg>)

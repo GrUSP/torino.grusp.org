@@ -7,6 +7,7 @@ author: "Enrico"
 meetup_url: "https://www.meetup.com/pug-torino/events/312250300/"
 original_url: "https://torino.grusp.org/auguri-di-natale-con-php-8-5/"
 redirect_from: ["/2025/12/auguri-di-natale-con-php-8-5/"]
+image: "/assets/uploads/2025/12/meetup_18_12_2025_presentazione.jpg"
 ---
 
 Il 18 Dicembre 2025 si è tenuto l'ultimo meetup dell'anno presso il [Toolbox coworking di Torino](<https://toolboxcoworking.com/>) con una presentazione delle novità del [PHP 8.5](<https://www.php.net/releases/8.5/en.php>), un linguaggio che continua a sfornare novità ogni anno.

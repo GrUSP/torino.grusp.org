@@ -56,6 +56,12 @@ jekyll-archives:
 
 # --- Default di front matter -------------------------------------------------
 defaults:
+  # Anteprima per i link condivisi (og:image, twitter:image) di jekyll-seo-tag.
+  # Un articolo con una foto della serata la sovrascrive con `image:`.
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/social-card.jpg
   - scope:
       path: ""
       type: posts
